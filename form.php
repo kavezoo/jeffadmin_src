@@ -37,12 +37,17 @@
                                                             <label for="select" class="form-control-label fw-bold">Select:</label>
                                                         </div>
                                                         <div class="col-12 col-md-9">
-                                                            <select name="select" id="select" class="form-select">
-                                                                <option value="0">Please select</option>
-                                                                <option value="1">Option #1</option>
-                                                                <option value="2">Option #2</option>
-                                                                <option value="3">Option #3</option>
-                                                            </select>
+                                                            <div class="select-with-action">
+                                                                <select name="select" id="select" class="form-select" data-tom-select>
+                                                                    <option value="">Please select</option>
+                                                                    <option value="1">Option #1</option>
+                                                                    <option value="2">Option #2</option>
+                                                                    <option value="3">Option #3</option>
+                                                                </select>
+                                                                <button type="button" class="btn btn-outline-secondary select-with-action__btn" aria-label="További lehetőségek" title="További lehetőségek">
+                                                                    <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+                                                                </button>
+                                                            </div>
                                                         </div>
                                                     </div>
 
@@ -92,12 +97,17 @@
                                                             <label for="selectLg" class="form-control-label fw-bold">Select Large:</label>
                                                         </div>
                                                         <div class="col-12 col-md-9">
-                                                            <select name="selectLg" id="selectLg" class="form-select form-select-lg">
-                                                                <option value="0">Please select</option>
-                                                                <option value="1">Option #1</option>
-                                                                <option value="2">Option #2</option>
-                                                                <option value="3">Option #3</option>
-                                                            </select>
+                                                            <div class="select-with-action">
+                                                                <select name="selectLg" id="selectLg" class="form-select" data-tom-select>
+                                                                    <option value="">Please select</option>
+                                                                    <option value="1">Option #1</option>
+                                                                    <option value="2">Option #2</option>
+                                                                    <option value="3">Option #3</option>
+                                                                </select>
+                                                                <button type="button" class="btn btn-outline-secondary select-with-action__btn" aria-label="További lehetőségek" title="További lehetőségek">
+                                                                    <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+                                                                </button>
+                                                            </div>
                                                         </div>
                                                     </div>
 

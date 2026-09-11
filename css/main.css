@@ -312,3 +312,103 @@ body.app .form-section__title {
 body.app form .row.mb-3.align-items-center > [class*="col-"] > .form-check {
 	margin-bottom: 0;
 }
+
+/* Select + ellipsis button (Tom Select + modal trigger later) */
+body.app .select-with-action {
+	display: flex;
+	align-items: stretch;
+	gap: 8px;
+	width: 100%;
+}
+
+body.app .select-with-action > .ts-wrapper {
+	flex: 1 1 auto;
+	min-width: 0;
+}
+
+body.app .select-with-action__btn {
+	flex-shrink: 0;
+	align-self: stretch;
+	width: 38px;
+	min-height: 38px;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+body.app .select-with-action .ts-wrapper--lg + .select-with-action__btn {
+	min-height: 44px;
+}
+
+body.app .select-with-action .ts-wrapper--sm + .select-with-action__btn {
+	min-height: 30px;
+}
+
+/*
+ * Tom Select — match theme form-select (border + caret).
+ * Bootstrap5 TS theme puts border/caret on .ts-wrapper.form-select;
+ * our earlier rules wrongly zeroed border/background on .ts-control.
+ */
+body.app .ts-wrapper.single,
+body.app .ts-wrapper.form-select {
+	padding: 0 !important;
+	height: auto !important;
+	min-height: 38px;
+	border: 1px solid var(--m-border, #e4e7ec) !important;
+	border-radius: 8px !important;
+	background-color: var(--m-surface, #fff) !important;
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+	background-repeat: no-repeat !important;
+	background-position: right 0.75rem center !important;
+	background-size: 16px 12px !important;
+	box-shadow: none !important;
+	display: flex;
+}
+
+body.app .ts-wrapper.single .ts-control,
+body.app .ts-wrapper.form-select .ts-control {
+	border: 0 !important;
+	background: transparent !important;
+	box-shadow: none !important;
+	min-height: 36px;
+	padding: 6px 2.25rem 6px 14px !important;
+	font-family: var(--m-font, inherit);
+	font-size: 13.5px;
+	color: var(--m-text, #1f2937);
+	line-height: 1.4;
+}
+
+body.app .ts-wrapper.focus,
+body.app .ts-wrapper.form-select.focus {
+	border-color: var(--m-accent, #4272d7) !important;
+	box-shadow: 0 0 0 3px rgba(var(--m-accent-rgb, 66, 114, 215), 0.15) !important;
+}
+
+body.app .ts-wrapper--lg {
+	min-height: 44px !important;
+}
+
+body.app .ts-wrapper--lg .ts-control {
+	min-height: 42px;
+	font-size: 14.5px;
+	padding-top: 8px !important;
+	padding-bottom: 8px !important;
+}
+
+body.app .ts-wrapper--sm {
+	min-height: 30px !important;
+}
+
+body.app .ts-wrapper--sm .ts-control {
+	min-height: 28px;
+	font-size: 12.5px;
+	padding-top: 2px !important;
+	padding-bottom: 2px !important;
+}
+
+body.app .ts-dropdown {
+	border: 1px solid var(--m-border, #e4e7ec);
+	border-radius: 8px;
+	box-shadow: var(--m-shadow-sm, 0 4px 12px rgba(0, 0, 0, 0.08));
+	font-family: var(--m-font, inherit);
+	font-size: 13.5px;
+}
