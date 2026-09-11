@@ -58,3 +58,8 @@ body.app .table-data-feature  .delete .item:hover{
 .card-header, .card-footer{
 	background-color: #f7f7f7 !important;
 }
+
+body.app .table-data2.table thead th .au-checkbox {
+	position: relative;
+	top: -3px;
+}

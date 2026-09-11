@@ -1,10 +1,4 @@
 <?php /*
-						<div class="alert alert-primary alert-dismissible fade show shadow" role="alert">
-							<i class="fa-solid fa-circle-info" style="margin-right:8px;"></i>
-							<strong>Heads up</strong> — this is an informational alert with default Bootstrap styling.
-							<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-						</div>
-
                         <!-- Page header -->
                         <div class="page-header">
                             <div>
@@ -25,11 +19,11 @@
 */ ?>
 						  <div class="row row-tight" style="margin-top: 16px;">
                             <div class="col-md-12">
-                                <section class="m-card shadow" aria-labelledby="orders-title">
-                                    <header class="m-card__header">
+                                <div class="card shadow" aria-labelledby="orders-title">
+                                    <div class="card-header border-bottom d-flex align-items-center justify-content-between">
                                         <div>
-                                            <h2 class="m-card__title" id="orders-title">Orders</h2>
-                                            <p class="m-card__subtitle">All orders, with inline actions.</p>
+                                            <strong id="orders-title">Orders</strong>
+                                            <small class="d-block">All orders, with inline actions.</small>
                                         </div>
                                         <div class="table-data__tool-right">
                                             <button class="au-btn au-btn--green au-btn--small" type="button">
@@ -43,10 +37,11 @@
                                                 </select>
                                             </div-->
                                         </div>
-                                    </header>
+                                    </div>
 
+                                    <div class="card-body p-0 pt-2">
                                     <div class="table-responsive">
-                                        <table class="table table-data2 table-border table-hover table-striped table-custom-hover">
+                                        <table class="table table-data2 table-border table-hover table-striped table-custom-hover mb-0">
                                             <thead>
                                                 <tr>
                                                     <th style="width:24px;"><label class="au-checkbox"><input type="checkbox" aria-label="Select all"><span class="au-checkmark"></span></label></th>
@@ -127,13 +122,13 @@
                                             </tbody>
                                         </table>
                                     </div>
+                                    </div>
 
-
-									<div class="cover-card__footer">
+                                    <div class="card-footer border-top d-flex align-items-center justify-content-between">
 										<span class="text-secondary">30/2548 rekord, 2/18 oldal</span>
 										
 <nav aria-label="Page navigation example">
-  <ul class="pagination">
+  <ul class="pagination mb-0">
     <li class="page-item">
       <a class="page-link" href="#" aria-label="Previous">
         <span aria-hidden="true">&laquo;</span>
@@ -150,9 +145,8 @@
       </a>
     </li>
   </ul>
-</nav>																						
-									</div>									
-                                </section>
+</nav>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
