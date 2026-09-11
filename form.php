@@ -1,9 +1,12 @@
-                        <div class="row">
-                            <div class="col-lg-11">
+                        <div class="row row-tight" style="margin-top: 16px;">
+                            <div class="col-md-10">
 
-                                <div class="card shadow">
+                                <div class="card shadow" aria-labelledby="basic-form-title">
                                     <div class="card-header border-bottom d-flex align-items-center justify-content-between">
-                                        <span><strong>Basic Form</strong> Elements</span>
+                                        <div>
+                                            <strong id="orders-title">Add New</strong>
+                                            <small class="d-block">Order item</small>
+                                        </div>
                                         <a href="#" class="m-btn m-btn--ghost" style="padding: 0 10px;" aria-label="Bezárás" title="Bezárás">
                                             <i class="fa-solid fa-xmark" aria-hidden="true"></i>
                                         </a>

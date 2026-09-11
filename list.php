@@ -26,8 +26,8 @@
                                             <small class="d-block">All orders, with inline actions.</small>
                                         </div>
                                         <div class="table-data__tool-right">
-                                            <button class="au-btn au-btn--green au-btn--small" type="button">
-                                                <i class="fa-solid fa-plus" aria-hidden="true"></i> Add item
+                                            <button type="button" class="btn btn-success">
+                                            <i class="fa-solid fa-plus" aria-hidden="true"></i> Add item
                                             </button>
                                             <!--div class="select-wrapper">
                                                 <select class="form-select" aria-label="Export">
@@ -45,13 +45,13 @@
                                             <thead>
                                                 <tr>
                                                     <th style="width:24px;"><label class="au-checkbox"><input type="checkbox" aria-label="Select all"><span class="au-checkmark"></span></label></th>
-                                                    <th>Name</th>
-                                                    <th>Email</th>
-                                                    <th>Description</th>
-                                                    <th>Date</th>
-                                                    <th>Status</th>
-                                                    <th>Price</th>
-                                                    <th style="width: 1px;">Action</th>
+                                                    <th><a href="#" class="desc">Name</a></th>
+                                                    <th><a href="#" class="desc">Email</a></th>
+                                                    <th><a href="#" class="asc">Description</a></th>
+                                                    <th><a href="#" class="desc">Date</a></th>
+                                                    <th><a href="#" class="asc">Status</a></th>
+                                                    <th><a href="#" class="asc">Price</a></th>
+                                                    <th class="action text-center pe-4" style="width: 1px;">Action</th>
                                                 </tr>
                                             </thead>
 											<tbody class="table-group-divider">
@@ -63,11 +63,11 @@
                                                     <td>Jan 15, 14:32</td>
                                                     <td><span class="status--process">Processed</span></td>
                                                     <td>$679.00</td>
-                                                    <td>
+                                                    <td class="text-center pe-4">
                                                         <div class="table-data-feature">
-                                                            <button class="item" type="button" data-bs-toggle="tooltip" title="Send"><i class="far-solid far fa-eye"></i></button>
-                                                            <button class="item" type="button" data-bs-toggle="tooltip" title="Edit"><i class="fa-solid fa-pen-to-square"></i></button>
-                                                            <button class="item" type="button" data-bs-toggle="tooltip" title="Delete"><i class="fa-solid fa-trash text-danger delete"></i></button>
+                                                            <button class="item" type="button" data-bs-toggle="tooltip" title="View"><i class="fa-regular fa-eye"></i></button>
+                                                            <button class="item" type="button" data-bs-toggle="tooltip" title="Edit"><i class="fa-regular fa-pen-to-square"></i></button>
+                                                            <button class="item delete" type="button" data-bs-toggle="tooltip" title="Delete"><i class="fa-regular fa-trash-can text-danger"></i></button>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -81,9 +81,9 @@
                                                     <td>$999.00</td>
                                                     <td>
                                                         <div class="table-data-feature">
-                                                            <button class="item" type="button" data-bs-toggle="tooltip" title="Send"><i class="fa-solid fa-paper-plane"></i></button>
-                                                            <button class="item" type="button" data-bs-toggle="tooltip" title="Edit"><i class="fa-solid fa-pen-to-square"></i></button>
-                                                            <button class="item" type="button" data-bs-toggle="tooltip" title="Delete"><i class="fa-solid fa-trash"></i></button>
+                                                            <button class="item" type="button" data-bs-toggle="tooltip" title="View"><i class="fa-regular fa-eye"></i></button>
+                                                            <button class="item" type="button" data-bs-toggle="tooltip" title="Edit"><i class="fa-regular fa-pen-to-square"></i></button>
+                                                            <button class="item delete" type="button" data-bs-toggle="tooltip" title="Delete"><i class="fa-regular fa-trash-can text-danger"></i></button>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -97,9 +97,9 @@
                                                     <td>$1,199.00</td>
                                                     <td>
                                                         <div class="table-data-feature">
-                                                            <button class="item" type="button" data-bs-toggle="tooltip" title="Send"><i class="fa-solid fa-paper-plane"></i></button>
-                                                            <button class="item" type="button" data-bs-toggle="tooltip" title="Edit"><i class="fa-solid fa-pen-to-square"></i></button>
-                                                            <button class="item" type="button" data-bs-toggle="tooltip" title="Delete"><i class="fa-solid fa-trash"></i></button>
+                                                            <button class="item" type="button" data-bs-toggle="tooltip" title="View"><i class="fa-regular fa-eye"></i></button>
+                                                            <button class="item" type="button" data-bs-toggle="tooltip" title="Edit"><i class="fa-regular fa-pen-to-square"></i></button>
+                                                            <button class="item delete" type="button" data-bs-toggle="tooltip" title="Delete"><i class="fa-regular fa-trash-can text-danger"></i></button>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -113,9 +113,9 @@
                                                     <td>$699.00</td>
                                                     <td>
                                                         <div class="table-data-feature">
-                                                            <button class="item" type="button" data-bs-toggle="tooltip" title="Send"><i class="fa-solid fa-paper-plane"></i></button>
-                                                            <button class="item" type="button" data-bs-toggle="tooltip" title="Edit"><i class="fa-solid fa-pen-to-square"></i></button>
-                                                            <button class="item" type="button" data-bs-toggle="tooltip" title="Delete"><i class="fa-solid fa-trash"></i></button>
+                                                            <button class="item" type="button" data-bs-toggle="tooltip" title="View"><i class="fa-regular fa-eye"></i></button>
+                                                            <button class="item" type="button" data-bs-toggle="tooltip" title="Edit"><i class="fa-regular fa-pen-to-square"></i></button>
+                                                            <button class="item delete" type="button" data-bs-toggle="tooltip" title="Delete"><i class="fa-regular fa-trash-can text-danger"></i></button>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -125,7 +125,7 @@
                                     </div>
 
                                     <div class="card-footer border-top d-flex align-items-center justify-content-between">
-										<span class="text-secondary">30/2548 rekord, 2/18 oldal</span>
+										<span class="small text-muted">30/2548 rekord, 2/18 oldal</span>
 										
 <nav aria-label="Page navigation example">
   <ul class="pagination mb-0">
