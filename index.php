@@ -87,7 +87,7 @@
 
 
 
-<?php 
+        <?php 
 					if(isset($_GET["m"]) && $_GET["m"] == "form"){
 						include_once("form.php");
 					}else{
@@ -109,6 +109,8 @@
     <script src="vendor/flatpickr/dist/l10n/hu.js"></script>
     <script src="js/form-datetime-config.js"></script>
     <script src="js/form-datetime.js"></script>
+    <script src="js/form-number-config.js"></script>
+    <script src="js/number-spinner.js"></script>
     <script src="vendor/hugerte/hugerte.min.js"></script>
     <script src="js/bootstrap5-init.js"></script>
     <script src="js/main-vanilla.js"></script>

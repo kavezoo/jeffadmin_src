@@ -1,55 +1,31 @@
-body.app .main-content, body.app, body.app .page-wrapper, body.app .page-container {
-	background: #e7e2d8;
-}
+/* ============================================================================
+   JeffAdmin — projekt-specifikus felülírások
+   Betöltés: css/theme.css → css/app.css → css/main.css
+   Csak az itteni adminfelület eltérései; a design tokenek az app.css-ben vannak.
+   ============================================================================ */
 
-body.app .navbar-sidebar .navbar__list > li.has-sub > a.js-arrow {
-	color: #ffffff !important;
-	background-color: #6194c1;
-}
+/* ----------------------------------------------------------------------------
+   1. Laphéj — háttér, tartalomterület, fejléc, copyright
+   ---------------------------------------------------------------------------- */
 
-body.app .navbar-sidebar .navbar__list .navbar__sub-list li.active > a,
-body.app .navbar-sidebar .navbar__list .navbar__sub-list li > a.active {
-  background: rgba(255, 255, 255, 0.14);
-  color: #ffffff;
+body.app .main-content,
+body.app,
+body.app .page-wrapper,
+body.app .page-container {
+  background: #e7e2d8;
 }
 
 body.app .main-content > .section__content--p30 {
   padding: 14px 14px 28px;
 }
 
-body.app .cover-card__footer {
-  margin-top: 0px;
-  border-top: 1px solid lightgray;
+body.app .header-wrap {
+  border-bottom: 1px solid lightgray;
 }
 
 .copyright {
   padding: 60px 0;
   padding-top: 10px;
-}
-
-/* Table cell borders: thin light gray (incl. vertical); tbody top/bottom: 2px black */
-body.app .table-data2.table > :not(caption) > * > * {
-	border: 1px solid #e0e0e0;
-}
-
-body.app .table-data2.table thead th {
-	border-top: 0;
-}
-
-body.app .table-data2.table tbody.table-group-divider {
-	border-top: 2px solid #b0b0b0;
-}
-
-body.app .table-data2.table tbody tr:first-child > * {
-	border-top: 2px solid #b0b0b0;
-}
-
-body.app .table-data2.table tbody tr:last-child > * {
-	border-bottom: 2px solid #b0b0b0;
-}
-
-body.app .header-wrap {
-	border-bottom: 1px solid lightgray;
 }
 
 @media (max-width: 991.98px) {
@@ -62,459 +38,600 @@ body.app .header-wrap {
   .page-container {
     top: 64px;
   }
+
   .table-data__tool .table-data__tool-right > button {
     margin-bottom: 0px;
   }
 }
 
-body.app .table-data-feature .item.delete {
-	border: 1px solid transparent;
+/* ----------------------------------------------------------------------------
+   2. Oldalsáv
+   ---------------------------------------------------------------------------- */
+
+body.app .navbar-sidebar .navbar__list > li.has-sub > a.js-arrow {
+  color: #ffffff !important;
+  background-color: #6194c1;
 }
 
-body.app .table-data-feature .item.delete:hover {
-	border-color: var(--m-danger);
+body.app .navbar-sidebar .navbar__list .navbar__sub-list li.active > a,
+body.app .navbar-sidebar .navbar__list .navbar__sub-list li > a.active {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
 }
 
-.card-header, .card-footer{
-	background-color: #f7f7f7 !important;
+/* ----------------------------------------------------------------------------
+   3. Kártyák
+   ---------------------------------------------------------------------------- */
+
+.card-header,
+.card-footer {
+  background-color: #f7f7f7 !important;
+}
+
+body.app .cover-card__footer {
+  margin-top: 0px;
+  border-top: 1px solid lightgray;
+}
+
+/* ----------------------------------------------------------------------------
+   4. Lista / táblázat
+   ---------------------------------------------------------------------------- */
+
+/* Table cell borders: thin light gray (incl. vertical); tbody top/bottom: 2px */
+body.app .table-data2.table > :not(caption) > * > * {
+  border: 1px solid #e0e0e0;
+}
+
+body.app .table-data2.table thead th {
+  border-top: 0;
+}
+
+body.app .table-data2.table tbody.table-group-divider {
+  border-top: 2px solid #b0b0b0;
+}
+
+body.app .table-data2.table tbody tr:first-child > * {
+  border-top: 2px solid #b0b0b0;
+}
+
+body.app .table-data2.table tbody tr:last-child > * {
+  border-bottom: 2px solid #b0b0b0;
 }
 
 body.app .table-data2.table thead th .au-checkbox {
-	position: relative;
-	top: -3px;
+  position: relative;
+  top: -3px;
 }
 
 /* Sortable column headers — look like plain th text; icon only with .asc / .desc */
 body.app .table-data2.table thead th > a {
-	color: inherit;
-	text-decoration: none;
-	font: inherit;
-	letter-spacing: inherit;
-	text-transform: inherit;
+  color: inherit;
+  text-decoration: none;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
 }
 
 body.app .table-data2.table thead th > a.asc::after,
 body.app .table-data2.table thead th > a.desc::after {
-	font-family: "Font Awesome 7 Free";
-	font-weight: 900;
-	font-size: 10px;
-	margin-left: 6px;
-	display: inline-block;
+  font-family: "Font Awesome 7 Free";
+  font-weight: 900;
+  font-size: 10px;
+  margin-left: 6px;
+  display: inline-block;
 }
 
 body.app .table-data2.table thead th > a.asc::after {
-	content: "\f0d8"; /* fa-caret-up */
+  content: "\f0d8"; /* fa-caret-up */
 }
 
 body.app .table-data2.table thead th > a.desc::after {
-	content: "\f0d7"; /* fa-caret-down */
+  content: "\f0d7"; /* fa-caret-down */
+}
+
+body.app .table-data-feature .item.delete {
+  border: 1px solid transparent;
+}
+
+body.app .table-data-feature .item.delete:hover {
+  border-color: var(--m-danger);
 }
 
 /* Record link — thin stroke icon, faint until hover */
 body.app .record-link .record-link__icon {
-	display: inline-block;
-	width: 0.9em;
-	height: 0.9em;
-	margin-left: 0.35em;
-	vertical-align: -0.1em;
-	color: #888;
-	opacity: 0.9;
-	transition: color 120ms ease, opacity 120ms ease;
+  display: inline-block;
+  width: 0.9em;
+  height: 0.9em;
+  margin-left: 0.35em;
+  vertical-align: -0.1em;
+  color: #888;
+  opacity: 0.9;
+  transition: color 120ms ease, opacity 120ms ease;
 }
 
 body.app .record-link:hover .record-link__icon {
-	color: #555;
-	opacity: 1;
+  color: #555;
+  opacity: 1;
 }
 
-/* Custom file picker — matches form-control / m-btn look */
-body.app .file-picker {
-	position: relative;
-	width: 100%;
-}
+/* ----------------------------------------------------------------------------
+   5. Űrlap — kártyafejléc és fülek
+   Overrides theme `body.app .card > .card-header { padding: 14px 20px }`
+   ---------------------------------------------------------------------------- */
 
-body.app .file-picker__input {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	padding: 0;
-	margin: -1px;
-	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
-	white-space: nowrap;
-	border: 0;
-}
-
-body.app .file-picker__control {
-	display: flex;
-	align-items: center;
-	gap: 12px;
-	width: 100%;
-	min-height: 38px;
-	margin: 0;
-	padding: 4px 4px 4px 4px;
-	background: var(--m-surface, #fff);
-	border: 1px solid var(--m-border, #e4e7ec);
-	border-radius: var(--m-radius, 8px);
-	cursor: pointer;
-	transition: border-color 120ms ease, box-shadow 120ms ease;
-}
-
-body.app .file-picker__control:hover {
-	border-color: #d6dae0;
-}
-
-body.app .file-picker__input:focus + .file-picker__control {
-	border-color: var(--m-accent, #4272d7);
-	box-shadow: 0 0 0 3px rgba(var(--m-accent-rgb, 66, 114, 215), 0.15);
-}
-
-body.app .file-picker__btn {
-	display: inline-flex;
-	align-items: center;
-	gap: 8px;
-	flex-shrink: 0;
-	height: 30px;
-	padding: 0 12px;
-	background: var(--m-surface, #fff);
-	border: 1px solid var(--m-border, #e4e7ec);
-	border-radius: 6px;
-	font-family: var(--m-font, inherit);
-	font-size: 12.5px;
-	font-weight: 500;
-	color: var(--m-text, #1f2937);
-	line-height: 1;
-	transition: background 120ms ease, border-color 120ms ease;
-}
-
-body.app .file-picker__control:hover .file-picker__btn {
-	background: var(--m-surface-2, #f3f4f6);
-}
-
-body.app .file-picker__name {
-	flex: 1;
-	min-width: 0;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	font-family: var(--m-font, inherit);
-	font-size: 13.5px;
-	font-weight: 400;
-	color: var(--m-text-muted, #6b7280);
-}
-
-body.app .file-picker__name.is-selected {
-	color: var(--m-text, #1f2937);
-}
-
-/* Form card header — Bootstrap card-header-tabs + centered title + close
-   Overrides theme `body.app .card > .card-header { padding: 14px 20px }` */
 body.app .card > .card-header.form-card-header,
 body.app .card-header.form-card-header {
-	display: flex;
-	align-items: flex-end;
-	gap: 8px;
-	position: relative;
-	padding: 12px 20px 0;
-	border-bottom: 1px solid var(--m-border, #e4e7ec);
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  position: relative;
+  padding: 12px 20px 0;
+  border-bottom: 1px solid var(--m-border, #e4e7ec);
 }
 
 body.app .card-header.form-card-header .form-card-header__title {
-	position: absolute;
-	left: 50%;
-	top: 10px;
-	transform: translateX(-50%);
-	text-align: center;
-	pointer-events: none;
-	line-height: 1.25;
-	z-index: 0;
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  transform: translateX(-50%);
+  text-align: center;
+  pointer-events: none;
+  line-height: 1.25;
+  z-index: 0;
 }
 
 body.app .card-header.form-card-header .form-card-header__tabs.nav-tabs.card-header-tabs {
-	flex: 1 1 auto;
-	margin-right: 0;
-	margin-left: 0;
-	margin-bottom: -1px;
-	border-bottom: 0;
-	position: relative;
-	z-index: 1;
+  flex: 1 1 auto;
+  margin-right: 0;
+  margin-left: 0;
+  margin-bottom: -1px;
+  border-bottom: 0;
+  position: relative;
+  z-index: 1;
 }
 
 body.app .card-header.form-card-header .form-card-header__tabs .nav-link {
-	color: #9aa0a6;
-	border: 1px solid #e0e0e0;
-	border-bottom-color: transparent;
-	background-color: transparent;
+  color: #9aa0a6;
+  border: 1px solid #e0e0e0;
+  border-bottom-color: transparent;
+  background-color: transparent;
 }
 
 body.app .card-header.form-card-header .form-card-header__tabs .nav-link:hover {
-	color: var(--m-text, #1f2937);
-	border-color: #d0d0d0;
-	border-bottom-color: transparent;
-	isolation: isolate;
+  color: var(--m-text, #1f2937);
+  border-color: #d0d0d0;
+  border-bottom-color: transparent;
+  isolation: isolate;
 }
 
 body.app .card-header.form-card-header .form-card-header__tabs .nav-link.active {
-	color: var(--m-text, #1f2937);
-	background-color: var(--m-surface, #fff);
-	border-color: var(--bs-border-color, #dee2e6) var(--bs-border-color, #dee2e6) var(--m-surface, #fff);
+  color: var(--m-text, #1f2937);
+  background-color: var(--m-surface, #fff);
+  border-color: var(--bs-border-color, #dee2e6) var(--bs-border-color, #dee2e6) var(--m-surface, #fff);
 }
 
 body.app .card-header.form-card-header .form-card-header__close {
-	flex-shrink: 0;
-	margin-bottom: 6px;
-	margin-left: 16px;
-	position: relative;
-	z-index: 1;
+  flex-shrink: 0;
+  margin-bottom: 6px;
+  margin-left: 16px;
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 991.98px) {
-	body.app .card-header.form-card-header {
-		flex-wrap: wrap;
-		padding-top: 8px;
-	}
+  body.app .card-header.form-card-header {
+    flex-wrap: wrap;
+    padding-top: 8px;
+  }
 
-	body.app .card-header.form-card-header .form-card-header__title {
-		position: static;
-		transform: none;
-		width: 100%;
-		order: -1;
-		pointer-events: auto;
-		margin-bottom: 4px;
-	}
+  body.app .card-header.form-card-header .form-card-header__title {
+    position: static;
+    transform: none;
+    width: 100%;
+    order: -1;
+    pointer-events: auto;
+    margin-bottom: 4px;
+  }
 
-	body.app .card-header.form-card-header .form-card-header__tabs .nav-item.ms-auto {
-		margin-left: 0 !important;
-	}
+  body.app .card-header.form-card-header .form-card-header__tabs .nav-item.ms-auto {
+    margin-left: 0 !important;
+  }
 }
 
-/* Form sections — reusable blocks inside tab panes */
+/* ----------------------------------------------------------------------------
+   6. Űrlap — szekciók és checkbox-sorok
+   ---------------------------------------------------------------------------- */
+
 body.app .form-section {
-	margin-bottom: 8px;
+  margin-bottom: 8px;
 }
 
 body.app .form-section + .form-section {
-	margin-top: 28px;
-	padding-top: 24px;
-	border-top: 1px solid var(--m-divider, #f1f3f5);
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--m-divider, #f1f3f5);
 }
 
 body.app .form-section__title {
-	margin: 0 0 16px;
-	font-family: var(--m-font, inherit);
-	font-size: 15px;
-	font-weight: 600;
-	color: var(--m-text, #1f2937);
-	letter-spacing: -0.01em;
+  margin: 0 0 16px;
+  font-family: var(--m-font, inherit);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--m-text, #1f2937);
+  letter-spacing: -0.01em;
 }
 
 /* Checkbox rows next to form labels — same vertical nudge as Inline Checkboxes */
 body.app form .row.mb-3.align-items-center > [class*="col-"] > .form-check {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
-/* Select + ellipsis button (Tom Select + modal trigger later) */
+/* ----------------------------------------------------------------------------
+   7. File picker — matches form-control / m-btn look
+   ---------------------------------------------------------------------------- */
+
+body.app .file-picker {
+  position: relative;
+  width: 100%;
+}
+
+body.app .file-picker__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+body.app .file-picker__control {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 38px;
+  margin: 0;
+  padding: 4px 4px 4px 4px;
+  background: var(--m-surface, #fff);
+  border: 1px solid var(--m-border, #e4e7ec);
+  border-radius: var(--m-radius, 8px);
+  cursor: pointer;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+
+body.app .file-picker__control:hover {
+  border-color: #d6dae0;
+}
+
+body.app .file-picker__input:focus + .file-picker__control {
+  border-color: var(--m-accent, #4272d7);
+  box-shadow: 0 0 0 3px rgba(var(--m-accent-rgb, 66, 114, 215), 0.15);
+}
+
+body.app .file-picker__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  height: 30px;
+  padding: 0 12px;
+  background: var(--m-surface, #fff);
+  border: 1px solid var(--m-border, #e4e7ec);
+  border-radius: 6px;
+  font-family: var(--m-font, inherit);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--m-text, #1f2937);
+  line-height: 1;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+
+body.app .file-picker__control:hover .file-picker__btn {
+  background: var(--m-surface-2, #f3f4f6);
+}
+
+body.app .file-picker__name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--m-font, inherit);
+  font-size: 13.5px;
+  font-weight: 400;
+  color: var(--m-text-muted, #6b7280);
+}
+
+body.app .file-picker__name.is-selected {
+  color: var(--m-text, #1f2937);
+}
+
+/* ----------------------------------------------------------------------------
+   8. Select + műveletgomb (Tom Select + modal trigger)
+   ---------------------------------------------------------------------------- */
+
 body.app .select-with-action {
-	display: flex;
-	align-items: stretch;
-	gap: 8px;
-	width: 100%;
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  width: 100%;
 }
 
 body.app .select-with-action > .ts-wrapper {
-	flex: 1 1 auto;
-	min-width: 0;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 body.app .select-with-action__btn {
-	flex-shrink: 0;
-	align-self: stretch;
-	width: 38px;
-	min-height: 38px;
-	padding-left: 0;
-	padding-right: 0;
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 38px;
+  min-height: 38px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 body.app .select-with-action .ts-wrapper--lg + .select-with-action__btn {
-	min-height: 44px;
+  min-height: 44px;
 }
 
 body.app .select-with-action .ts-wrapper--sm + .select-with-action__btn {
-	min-height: 30px;
+  min-height: 30px;
 }
 
-/*
- * Tom Select — match theme form-select (border + caret).
- * Bootstrap5 TS theme puts border/caret on .ts-wrapper.form-select;
- * our earlier rules wrongly zeroed border/background on .ts-control.
- */
+/* ----------------------------------------------------------------------------
+   9. Tom Select — match theme form-select (border + caret)
+   Bootstrap5 TS theme puts border/caret on .ts-wrapper.form-select;
+   earlier rules wrongly zeroed border/background on .ts-control.
+   ---------------------------------------------------------------------------- */
+
 body.app .ts-wrapper.single,
 body.app .ts-wrapper.form-select {
-	padding: 0 !important;
-	height: auto !important;
-	min-height: 38px;
-	border: 1px solid var(--m-border, #e4e7ec) !important;
-	border-radius: 8px !important;
-	background-color: var(--m-surface, #fff) !important;
-	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
-	background-repeat: no-repeat !important;
-	background-position: right 0.75rem center !important;
-	background-size: 16px 12px !important;
-	box-shadow: none !important;
-	display: flex;
+  padding: 0 !important;
+  height: auto !important;
+  min-height: 38px;
+  border: 1px solid var(--m-border, #e4e7ec) !important;
+  border-radius: 8px !important;
+  background-color: var(--m-surface, #fff) !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 0.75rem center !important;
+  background-size: 16px 12px !important;
+  box-shadow: none !important;
+  display: flex;
 }
 
 body.app .ts-wrapper.single .ts-control,
 body.app .ts-wrapper.form-select .ts-control {
-	border: 0 !important;
-	background: transparent !important;
-	box-shadow: none !important;
-	min-height: 36px;
-	padding: 6px 2.25rem 6px 14px !important;
-	font-family: var(--m-font, inherit);
-	font-size: 13.5px;
-	color: var(--m-text, #1f2937);
-	line-height: 1.4;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  min-height: 36px;
+  padding: 6px 2.25rem 6px 14px !important;
+  font-family: var(--m-font, inherit);
+  font-size: 13.5px;
+  color: var(--m-text, #1f2937);
+  line-height: 1.4;
 }
 
 body.app .ts-wrapper.focus,
 body.app .ts-wrapper.form-select.focus {
-	border-color: var(--m-accent, #4272d7) !important;
-	box-shadow: 0 0 0 3px rgba(var(--m-accent-rgb, 66, 114, 215), 0.15) !important;
+  border-color: var(--m-accent, #4272d7) !important;
+  box-shadow: 0 0 0 3px rgba(var(--m-accent-rgb, 66, 114, 215), 0.15) !important;
 }
 
 body.app .ts-wrapper--lg {
-	min-height: 44px !important;
+  min-height: 44px !important;
 }
 
 body.app .ts-wrapper--lg .ts-control {
-	min-height: 42px;
-	font-size: 14.5px;
-	padding-top: 8px !important;
-	padding-bottom: 8px !important;
+  min-height: 42px;
+  font-size: 14.5px;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
 }
 
 body.app .ts-wrapper--sm {
-	min-height: 30px !important;
+  min-height: 30px !important;
 }
 
 body.app .ts-wrapper--sm .ts-control {
-	min-height: 28px;
-	font-size: 12.5px;
-	padding-top: 2px !important;
-	padding-bottom: 2px !important;
+  min-height: 28px;
+  font-size: 12.5px;
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
 }
 
 body.app .ts-dropdown {
-	border: 1px solid var(--m-border, #e4e7ec);
-	border-radius: 8px;
-	box-shadow: var(--m-shadow-sm, 0 4px 12px rgba(0, 0, 0, 0.08));
-	font-family: var(--m-font, inherit);
-	font-size: 13.5px;
+  border: 1px solid var(--m-border, #e4e7ec);
+  border-radius: 8px;
+  box-shadow: var(--m-shadow-sm, 0 4px 12px rgba(0, 0, 0, 0.08));
+  font-family: var(--m-font, inherit);
+  font-size: 13.5px;
 }
 
-/* Flatpickr fields — narrower than full-width form-control */
+/* ----------------------------------------------------------------------------
+   10. Flatpickr — mezőszélesség + naptár
+   ---------------------------------------------------------------------------- */
+
 body.app input.form-control.fp-field {
-	display: inline-block;
-	max-width: 100%;
-	vertical-align: middle;
-	box-sizing: border-box;
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: middle;
+  box-sizing: border-box;
 }
 
 body.app input.form-control.fp-field--time {
-	width: 6.5rem;
-	max-width: 6.5rem;
+  width: 6.5rem;
+  max-width: 6.5rem;
 }
 
 body.app input.form-control.fp-field--date {
-	width: 10rem;
-	max-width: 10rem;
+  width: 10rem;
+  max-width: 10rem;
 }
 
 body.app input.form-control.fp-field--datetime {
-	width: 15rem;
-	max-width: 15rem;
+  width: 15rem;
+  max-width: 15rem;
 }
 
 @media (max-width: 575.98px) {
-	body.app input.form-control.fp-field--time {
-		width: 6.25rem;
-		max-width: 100%;
-	}
+  body.app input.form-control.fp-field--time {
+    width: 6.25rem;
+    max-width: 100%;
+  }
 
-	body.app input.form-control.fp-field--date {
-		width: 9.5rem;
-		max-width: 100%;
-	}
+  body.app input.form-control.fp-field--date {
+    width: 9.5rem;
+    max-width: 100%;
+  }
 
-	body.app input.form-control.fp-field--datetime {
-		width: 14rem;
-		max-width: 100%;
-	}
+  body.app input.form-control.fp-field--datetime {
+    width: 14rem;
+    max-width: 100%;
+  }
 }
 
-/* Flatpickr calendar popover — stand out from page */
 body.app .flatpickr-calendar {
-	border: 1px solid rgba(15, 23, 42, 0.12) !important;
-	border-radius: 10px !important;
-	box-shadow:
-		0 2px 6px rgba(15, 23, 42, 0.06),
-		0 12px 28px rgba(15, 23, 42, 0.14) !important;
-	overflow: hidden;
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+  border-radius: 10px !important;
+  box-shadow:
+    0 2px 6px rgba(15, 23, 42, 0.06),
+    0 12px 28px rgba(15, 23, 42, 0.14) !important;
+  overflow: hidden;
 }
 
 body.app .flatpickr-calendar.arrowTop:before,
 body.app .flatpickr-calendar.arrowTop:after,
 body.app .flatpickr-calendar.arrowBottom:before,
 body.app .flatpickr-calendar.arrowBottom:after {
-	display: none;
+  display: none;
 }
 
 body.app .flatpickr-months,
 body.app .flatpickr-weekdays,
 body.app .flatpickr-days {
-	font-family: var(--m-font, inherit);
+  font-family: var(--m-font, inherit);
 }
 
 body.app .flatpickr-day.selected,
 body.app .flatpickr-day.startRange,
 body.app .flatpickr-day.endRange {
-	background: var(--m-accent, #4272d7);
-	border-color: var(--m-accent, #4272d7);
+  background: var(--m-accent, #4272d7);
+  border-color: var(--m-accent, #4272d7);
 }
 
-/* HugeRTE — Megjegyzés tab fills the pane */
+/* ----------------------------------------------------------------------------
+   11. Number spinner — + / − stepper
+   ---------------------------------------------------------------------------- */
+
+body.app .number-spinner {
+  display: inline-flex;
+  align-items: stretch;
+  max-width: 100%;
+  border: 1px solid var(--m-border, #e4e7ec);
+  border-radius: 8px;
+  background: var(--m-surface, #fff);
+  overflow: hidden;
+}
+
+body.app .number-spinner:focus-within {
+  border-color: var(--m-accent, #4272d7);
+  box-shadow: 0 0 0 3px rgba(var(--m-accent-rgb, 66, 114, 215), 0.15);
+}
+
+body.app input.form-control.number-spinner__input {
+  width: 9rem;
+  max-width: 14rem;
+  flex: 1 1 auto;
+  min-width: 6rem;
+  height: 36px;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  text-align: center;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+body.app .number-spinner__btn {
+  flex: 0 0 34px;
+  width: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: #f3f4f6;
+  color: var(--m-text, #1f2937);
+  cursor: pointer;
+  line-height: 1;
+  transition: background 120ms ease, color 120ms ease;
+}
+
+body.app .number-spinner__btn:hover {
+  background: #e5e7eb;
+  color: var(--m-accent, #4272d7);
+}
+
+body.app .number-spinner__btn:active {
+  background: #dbe1ea;
+}
+
+body.app .number-spinner__btn:focus-visible {
+  outline: 2px solid var(--m-accent, #4272d7);
+  outline-offset: -2px;
+  z-index: 1;
+}
+
+body.app .number-spinner__btn[data-spinner-dec] {
+  border-right: 1px solid var(--m-border, #e4e7ec);
+}
+
+body.app .number-spinner__btn[data-spinner-inc] {
+  border-left: 1px solid var(--m-border, #e4e7ec);
+}
+
+/* ----------------------------------------------------------------------------
+   12. HugeRTE — Megjegyzés tab fills the pane
+   ---------------------------------------------------------------------------- */
+
 body.app .form-card-body:has(#tab-megjegyzes.active) {
-	padding: 0;
+  padding: 0;
 }
 
 body.app #tab-megjegyzes.tab-pane {
-	min-height: calc(100vh - 260px);
+  min-height: calc(100vh - 260px);
 }
 
 body.app .form-wysiwyg {
-	display: flex;
-	flex-direction: column;
-	min-height: calc(100vh - 260px);
-	height: calc(100vh - 260px);
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 260px);
+  height: calc(100vh - 260px);
 }
 
 body.app .form-wysiwyg__editor {
-	visibility: hidden;
+  visibility: hidden;
 }
 
 body.app .form-wysiwyg .tox-hugerte,
 body.app .form-wysiwyg .tox {
-	flex: 1 1 auto;
-	border: 0 !important;
-	border-radius: 0 !important;
+  flex: 1 1 auto;
+  border: 0 !important;
+  border-radius: 0 !important;
 }
 
 body.app .form-wysiwyg .tox-editor-header {
-	border-bottom: 1px solid var(--m-border, #e4e7ec) !important;
-	box-shadow: none !important;
+  border-bottom: 1px solid var(--m-border, #e4e7ec) !important;
+  box-shadow: none !important;
 }
 
 body.app .form-wysiwyg .tox-statusbar {
-	border-top: 1px solid var(--m-border, #e4e7ec) !important;
+  border-top: 1px solid var(--m-border, #e4e7ec) !important;
 }

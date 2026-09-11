@@ -1,18 +1,34 @@
 <?php
-/**
- * Flatpickr induló értékek — submit formátum (locale-független):
- *   date:     Y-m-d            pl. 2026-03-15
- *   time:     H:i              pl. 14:30
- *   datetime: Y-m-d H:i:S      pl. 2026-03-15 14:30:00
- * Üres string = üres mező. A megjelenítés (pl. 2026.03.15.) a JS végzi.
- */
-$fpDate = '2026-03-15';
-$fpTime = '14:30';
-$fpDatetime = '2026-03-15 14:30:00';
+    /**
+     * Flatpickr induló értékek — submit formátum (locale-független):
+     *   date:     Y-m-d            pl. 2026-03-15
+     *   time:     H:i              pl. 14:30
+     *   datetime: Y-m-d H:i:S      pl. 2026-03-15 14:30:00
+     * Üres string = üres mező. A megjelenítés (pl. 2026.03.15.) a JS végzi.
+     */
+    $fpDate = '2026-03-15';
+    $fpTime = '14:30';
+    $fpDatetime = '2026-03-15 14:30:00';
 
-$fpDate = $fpDate ?? '';
-$fpTime = $fpTime ?? '';
-$fpDatetime = $fpDatetime ?? '';
+    $fpDate = $fpDate ?? '';
+    $fpTime = $fpTime ?? '';
+    $fpDatetime = $fpDatetime ?? '';
+
+    /**
+     * Számmező (spinner) — PHP konfig:
+     *   $numInteger — true: csak egész; false: tizedes is
+     *   $numMin / $numMax — intervallum (null = nincs határ)
+     *   $numStep — lépték (egész: 1, tizedes pl. 0.1)
+     *   $numValue — induló érték (üres string = üres mező)
+     */
+    $numInteger = false;
+    $numValue = 3.14;
+
+    $numInteger = $numInteger ?? true;
+    $numMin = $numMin ?? -100;
+    $numMax = $numMax ?? 1000;
+    $numStep = $numStep ?? ($numInteger ? 1 : 0.1);
+    $numValue = $numValue ?? '';
 ?>
                         <div class="row row-tight" style="margin-top: 16px;">
                             <div class="col-md-10">
@@ -82,10 +98,15 @@ $fpDatetime = $fpDatetime ?? '';
                                                                                                         
                                                     <div class="row mb-3">
                                                         <div class="col-12 col-md-2 text-start text-md-end">
-                                                            <label for="integer-input" class="form-control-label fw-bold">Egész szám:</label>
+                                                            <label for="integer-input" class="form-control-label fw-bold"><?= $numInteger ? 'Egész szám:' : 'Szám:' ?></label>
                                                         </div>
                                                         <div class="col-12 col-md-9">
-                                                            <input type="number" id="integer-input" name="integer_input" class="form-control" inputmode="numeric" step="1" min="0" placeholder="0">
+                                                            <input type="text" id="integer-input" name="integer_input" placeholder="<?= $numInteger ? '0' : '0,0' ?>" class="form-control" data-number-spinner
+                                                                data-integer="<?= $numInteger ? '1' : '0' ?>" autocomplete="off" inputmode="<?= $numInteger ? 'numeric' : 'decimal' ?>"  step="<?= htmlspecialchars((string) $numStep, ENT_QUOTES, 'UTF-8') ?>"
+                                                                <?php if ($numMin !== null && $numMin !== '') : ?>min="<?= htmlspecialchars((string) $numMin, ENT_QUOTES, 'UTF-8') ?>"<?php endif; ?>
+                                                                <?php if ($numMax !== null && $numMax !== '') : ?>max="<?= htmlspecialchars((string) $numMax, ENT_QUOTES, 'UTF-8') ?>"<?php endif; ?>
+                                                                <?php if ($numValue !== '' && $numValue !== null) : ?>value="<?= htmlspecialchars((string) $numValue, ENT_QUOTES, 'UTF-8') ?>"<?php endif; ?>
+                                                            >
                                                         </div>
                                                     </div>
 
