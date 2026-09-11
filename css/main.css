@@ -1,0 +1,64 @@
+body.app .main-content, body.app, body.app .page-wrapper, body.app .page-container {
+	background: #e7e2d8;
+}
+
+
+body.app .navbar-sidebar .navbar__list > li.has-sub > a.js-arrow {
+	color: #ffffff !important;
+	background-color: #6194c1;
+}
+
+body.app .navbar-sidebar .navbar__list .navbar__sub-list li.active > a,
+body.app .navbar-sidebar .navbar__list .navbar__sub-list li > a.active {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+}
+
+
+body.app .main-content > .section__content--p30 {
+  padding: 14px 14px 28px;
+}
+
+body.app .cover-card__footer {
+  margin-top: 0px;
+  border-top: 1px solid lightgray;
+}
+
+
+.copyright {
+  padding: 60px 0;
+  padding-top: 10px;
+}
+
+.table-group-divider {
+  border-top: 2px solid lightgray;
+}
+
+body.app .header-wrap {
+	border-bottom: 1px solid lightgray;
+}
+
+@media (max-width: 991.98px) {
+  body.app .main-content {
+    padding-top: 0px !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .page-container {
+    top: 64px;
+  }
+  .table-data__tool .table-data__tool-right > button {
+    margin-bottom: 0px;
+  }
+}
+
+
+body.app .table-data-feature  .delete .item:hover{
+	border: 1px solid rgb(220, 53, 69);
+	color: white !important;
+}
+
+.card-header, .card-footer{
+	background-color: #f7f7f7 !important;
+}

@@ -8,6 +8,7 @@
                 </form>
                 <div class="header-button">
                   <div class="noti-wrap">
+<?php /*
                     <div class="noti__item js-item-menu" role="button" tabindex="0" aria-haspopup="true" aria-label="Messages"><i class="fa-solid fa-comment-dots"></i><span class="quantity">1</span>
                       <div class="mess-dropdown js-dropdown">
                         <div class="mess__title">
@@ -30,6 +31,7 @@
                         <div class="mess__footer"><a href="#">View all messages</a></div>
                       </div>
                     </div>
+					
                     <div class="noti__item js-item-menu" role="button" tabindex="0" aria-haspopup="true" aria-label="Emails"><i class="fa-solid fa-envelope"></i><span class="quantity">1</span>
                       <div class="email-dropdown js-dropdown">
                         <div class="email__title">
@@ -82,12 +84,13 @@
                         <div class="notifi__footer"><a href="#">All notifications</a></div>
                       </div>
                     </div>
+*/ ?>
                   </div>
                   <div class="account-wrap">
                     <div class="account-item clearfix js-item-menu" role="button" tabindex="0" aria-haspopup="true" aria-label="Account menu">
                       <div class="image"><img src="images/icon/avatar-01.jpg" alt="John Doe"></div>
                       <div class="content"><a class="js-acc-btn" href="#">john doe</a></div>
-                      <div class="account-dropdown js-dropdown">
+                      <div class="account-dropdown js-dropdown border border-2 shadow">
                         <div class="info clearfix">
                           <div class="image"><a href="#"><img src="images/icon/avatar-01.jpg" alt="John Doe"></a></div>
                           <div class="content">
@@ -95,9 +98,8 @@
                           </div>
                         </div>
                         <div class="account-dropdown__body">
-                          <div class="account-dropdown__item"><a href="#"><i class="fa-solid fa-user"></i>Account</a></div>
+                          <div class="account-dropdown__item"><a href="#"><i class="fa-solid fa-user"></i>Profile</a></div>
                           <div class="account-dropdown__item"><a href="#"><i class="fa-solid fa-gear"></i>Setting</a></div>
-                          <div class="account-dropdown__item"><a href="#"><i class="fa-solid fa-sack-dollar"></i>Billing</a></div>
                         </div>
                         <div class="account-dropdown__footer"><a href="#"><i class="fa-solid fa-power-off"></i>Logout</a></div>
                       </div>

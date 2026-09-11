@@ -22,6 +22,7 @@
     <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all"/>
     <link href="css/theme.css" rel="stylesheet" media="all"/>
     <link href="css/app.css" rel="stylesheet" media="all"/>
+    <link href="css/main.css" rel="stylesheet" media="all"/>
   </head>
   <body class="app"><a class="visually-hidden-focusable skip-link" href="#main-content">Skip to main content</a>
     <div class="page-wrapper">
@@ -29,7 +30,7 @@
 	  <?php include_once("header_top.php"); ?>
 	  
       <aside class="menu-sidebar" id="main-sidebar">
-        <div class="logo"><a class="logo-link" href="index.html" aria-label="CoolAdmin home"><span class="logo-mark" aria-hidden="true">C</span><span class="logo-text">CoolAdmin</span></a>
+        <div class="logo"><a class="logo-link" href="index.html" aria-label="CoolAdmin home"><span class="logo-mark" aria-hidden="true">J</span><span class="logo-text">NEW JeffAdmin</span></a>
           <button class="sidebar-close js-sidebar-toggle" type="button" aria-label="Close navigation"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
         </div>
         <div class="menu-sidebar__content js-scrollbar1">
@@ -37,22 +38,22 @@
         </div>
       </aside>
       <div class="page-container">
+	  
         <?php include_once("header.php"); ?>
+		
         <main class="main-content" id="main-content">
           <div class="section__content section__content--p30">
             <div class="container-fluid">
 
-                <?php include_once("list.php"); ?>
+                <?php 
+					if(isset($_GET["m"]) && $_GET["m"] == "form"){
+						include_once("form.php");
+					}else{
+						include_once("list.php");
+					}
+				?>
 
-				<!-- Footer -->
-				<div class="row" style="margin-top: 28px;">
-					<div class="col-md-12">
-						<div class="copyright">
-							<p>Copyright © 2026 Colorlib. All rights reserved. Template by <a href="https://colorlib.com" rel="nofollow" target="_blank">Colorlib</a>.</p>
-						</div>
-					</div>
-				</div>
-
+                <?php include_once("footer.php"); ?>
 
             </div>
           </div>
