@@ -206,3 +206,109 @@ body.app .file-picker__name {
 body.app .file-picker__name.is-selected {
 	color: var(--m-text, #1f2937);
 }
+
+/* Form card header — Bootstrap card-header-tabs + centered title + close
+   Overrides theme `body.app .card > .card-header { padding: 14px 20px }` */
+body.app .card > .card-header.form-card-header,
+body.app .card-header.form-card-header {
+	display: flex;
+	align-items: flex-end;
+	gap: 8px;
+	position: relative;
+	padding: 12px 20px 0;
+	border-bottom: 1px solid var(--m-border, #e4e7ec);
+}
+
+body.app .card-header.form-card-header .form-card-header__title {
+	position: absolute;
+	left: 50%;
+	top: 10px;
+	transform: translateX(-50%);
+	text-align: center;
+	pointer-events: none;
+	line-height: 1.25;
+	z-index: 0;
+}
+
+body.app .card-header.form-card-header .form-card-header__tabs.nav-tabs.card-header-tabs {
+	flex: 1 1 auto;
+	margin-right: 0;
+	margin-left: 0;
+	margin-bottom: -1px;
+	border-bottom: 0;
+	position: relative;
+	z-index: 1;
+}
+
+body.app .card-header.form-card-header .form-card-header__tabs .nav-link {
+	color: #9aa0a6;
+	border: 1px solid #e0e0e0;
+	border-bottom-color: transparent;
+	background-color: transparent;
+}
+
+body.app .card-header.form-card-header .form-card-header__tabs .nav-link:hover {
+	color: var(--m-text, #1f2937);
+	border-color: #d0d0d0;
+	border-bottom-color: transparent;
+	isolation: isolate;
+}
+
+body.app .card-header.form-card-header .form-card-header__tabs .nav-link.active {
+	color: var(--m-text, #1f2937);
+	background-color: var(--m-surface, #fff);
+	border-color: var(--bs-border-color, #dee2e6) var(--bs-border-color, #dee2e6) var(--m-surface, #fff);
+}
+
+body.app .card-header.form-card-header .form-card-header__close {
+	flex-shrink: 0;
+	margin-bottom: 6px;
+	margin-left: 16px;
+	position: relative;
+	z-index: 1;
+}
+
+@media (max-width: 991.98px) {
+	body.app .card-header.form-card-header {
+		flex-wrap: wrap;
+		padding-top: 8px;
+	}
+
+	body.app .card-header.form-card-header .form-card-header__title {
+		position: static;
+		transform: none;
+		width: 100%;
+		order: -1;
+		pointer-events: auto;
+		margin-bottom: 4px;
+	}
+
+	body.app .card-header.form-card-header .form-card-header__tabs .nav-item.ms-auto {
+		margin-left: 0 !important;
+	}
+}
+
+/* Form sections — reusable blocks inside tab panes */
+body.app .form-section {
+	margin-bottom: 8px;
+}
+
+body.app .form-section + .form-section {
+	margin-top: 28px;
+	padding-top: 24px;
+	border-top: 1px solid var(--m-divider, #f1f3f5);
+}
+
+body.app .form-section__title {
+	margin: 0 0 16px;
+	font-family: var(--m-font, inherit);
+	font-size: 15px;
+	font-weight: 600;
+	color: var(--m-text, #1f2937);
+	letter-spacing: -0.01em;
+}
+
+/* Checkbox rows next to form labels — same vertical nudge as Inline Checkboxes */
+body.app form .row.mb-3.align-items-center > [class*="col-"] > .form-check {
+	margin-bottom: 0;
+}
