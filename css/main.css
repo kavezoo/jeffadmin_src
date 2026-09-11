@@ -109,3 +109,20 @@ body.app .table-data2.table thead th > a.asc::after {
 body.app .table-data2.table thead th > a.desc::after {
 	content: "\f0d7"; /* fa-caret-down */
 }
+
+/* Record link — thin stroke icon, faint until hover */
+body.app .record-link .record-link__icon {
+	display: inline-block;
+	width: 0.9em;
+	height: 0.9em;
+	margin-left: 0.35em;
+	vertical-align: -0.1em;
+	color: #888;
+	opacity: 0.9;
+	transition: color 120ms ease, opacity 120ms ease;
+}
+
+body.app .record-link:hover .record-link__icon {
+	color: #555;
+	opacity: 1;
+}

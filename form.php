@@ -15,7 +15,7 @@
                                     <div class="card-body card-body">
                                         <form action="#" method="post" onsubmit="return false" enctype="multipart/form-data" class="form-horizontal">
                                             <div class="row mb-3">
-                                                <div class="col col-md-2 text-end">
+                                                <div class="col col-md-2 text-start text-md-end">
                                                     <label for="text-input" class="form-control-label fw-bold">Text Input:</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
@@ -28,7 +28,7 @@
 											
 											
                                             <div class="row mb-3 align-items-start">
-                                            <div class="col col-md-2 text-end">
+                                            <div class="col col-md-2 text-start text-md-end">
                                                     <label for="textarea-input" class="form-control-label fw-bold">Textarea:</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
@@ -39,7 +39,7 @@
 											
 											
                                             <div class="row mb-3">
-                                                <div class="col col-md-2 text-end">
+                                                <div class="col col-md-2 text-start text-md-end">
                                                     <label for="select" class="form-control-label fw-bold">Select:</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
@@ -53,7 +53,7 @@
                                             </div>
 											
                                             <div class="row mb-3">
-                                                <div class="col col-md-2 text-end">
+                                                <div class="col col-md-2 text-start text-md-end">
                                                     <label for="selectLg" class="form-control-label fw-bold">Select Large:</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
@@ -67,7 +67,7 @@
                                             </div>
 											
                                             <div class="row mb-3">
-                                                <div class="col col-md-2 text-end">
+                                                <div class="col col-md-2 text-start text-md-end">
                                                     <label for="selectSm" class="form-control-label fw-bold">Select Small:</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
@@ -84,7 +84,7 @@
 
 
                                             <div class="row mb-3">
-                                                <div class="col col-md-2 text-end">
+                                                <div class="col col-md-2 text-start text-md-end">
                                                     <label class="form-control-label fw-bold">Inline Checkboxes:</label>
                                                 </div>
                                                 <div class="col col-md-9">

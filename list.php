@@ -58,7 +58,7 @@
 											<tbody class="table-group-divider">
                                                 <tr>
                                                     <td class="text-center pe-3"><label class="au-checkbox"><input type="checkbox"><span class="au-checkmark"></span></label></td>
-                                                    <td><a href="#" class="text-decoration-none text-dark fw-bold">Administration</a></td>
+                                                    <td><a href="#" class="text-decoration-none text-dark fw-bold record-link" data-bs-toggle="tooltip" title="Administration rekord megtekintése">Administration <?= icon('link-chain', 'record-link__icon') ?></a></td>
                                                     <td>Gipsz Jakab</td>
                                                     <td>lori@example.com</td>
                                                     <td>Samsung Galaxy S25 Ultra</td>
@@ -75,7 +75,7 @@
                                                 </tr>
                                                 <tr>
                                                 <td class="text-center pe-3"><label class="au-checkbox"><input type="checkbox"><span class="au-checkmark"></span></label></td>
-                                                <td><a href="#" class="text-decoration-none text-dark fw-bold">Administration</a></td>
+                                                <td><a href="#" class="text-decoration-none text-dark fw-bold record-link" data-bs-toggle="tooltip" title="Administration rekord megtekintése">Administration <?= icon('link-chain', 'record-link__icon') ?></a></td>
                                                     <td>John Smith</td>
                                                     <td><a class="block-email" href="#">john@example.com</a></td>
                                                     <td>iPhone 17 128GB Titanium</td>
@@ -92,7 +92,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td class="text-center pe-3"><label class="au-checkbox"><input type="checkbox"><span class="au-checkmark"></span></label></td>
-                                                    <td><a href="#" class="text-decoration-none text-dark fw-bold">Administration</a></td>
+                                                    <td><a href="#" class="text-decoration-none text-dark fw-bold record-link" data-bs-toggle="tooltip" title="Administration rekord megtekintése">Administration <?= icon('link-chain', 'record-link__icon') ?></a></td>
                                                     <td>Sarah Wilson</td>
                                                     <td><a class="block-email" href="#">sarah@example.com</a></td>
                                                     <td>iPhone 17 Pro Max 1TB</td>
@@ -109,7 +109,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td class="text-center pe-3"><label class="au-checkbox"><input type="checkbox"><span class="au-checkmark"></span></label></td>
-                                                    <td><a href="#" class="text-decoration-none text-dark fw-bold">Administration</a></td>
+                                                    <td><a href="#" class="text-decoration-none text-dark fw-bold record-link" data-bs-toggle="tooltip" title="Administration rekord megtekintése">Administration <?= icon('link-chain', 'record-link__icon') ?></a></td>
                                                     <td>Robert Taylor</td>
                                                     <td><a class="block-email" href="#">robert@example.com</a></td>
                                                     <td>Camera C430W 4k</td>

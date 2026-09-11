@@ -25,6 +25,7 @@
     <link href="css/main.css" rel="stylesheet" media="all"/>
   </head>
   <body class="app"><a class="visually-hidden-focusable skip-link" href="#main-content">Skip to main content</a>
+    <?php include_once __DIR__ . '/helpers.php'; ?>
     <div class="page-wrapper">
       
 	  <?php include_once("header_top.php"); ?>
