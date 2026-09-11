@@ -87,13 +87,13 @@
 
 
 
-        <?php 
-					if(isset($_GET["m"]) && $_GET["m"] == "form"){
-						include_once("form.php");
-					}else{
-						include_once("list.php");
-					}
-				?>
+                <?php 
+                  if(isset($_GET["m"]) && $_GET["m"] == "form"){
+                    include_once("form.php");
+                  }else{
+                    include_once("list.php");
+                  }
+                ?>
 
                 <?php //include_once("footer.php"); ?>
 

@@ -180,14 +180,25 @@ body.app .table-data2.table td.datetime {
 	padding-right: 0.5rem;
 }
 
-/* Number / integer — right aligned */
+/* Number / integer — header centered, values right aligned */
 body.app .table-data2.table th.number,
+body.app .table-data2.table th.integer {
+	text-align: center;
+	white-space: nowrap;
+	font-variant-numeric: tabular-nums;
+}
+
 body.app .table-data2.table td.number,
-body.app .table-data2.table th.integer,
 body.app .table-data2.table td.integer {
 	text-align: right;
 	white-space: nowrap;
 	font-variant-numeric: tabular-nums;
+}
+
+body.app .table-data2.table td.number .currency {
+	margin-left: 0.25em;
+	font-weight: 400;
+	color: #6b7280;
 }
 
 /* Boolean / visible — eye icon */
@@ -252,10 +263,33 @@ body.app .au-checkbox input:indeterminate ~ .au-checkmark::after {
 	border-radius: 1px;
 }
 
+body.app .table-data2.table th.select-col,
+body.app .table-data2.table td.select-col {
+	width: 24px;
+	text-align: center;
+	padding-left: 0.75rem;
+	padding-right: 0.75rem;
+	vertical-align: middle;
+}
+
 body.app .table-data2.table th.id-col,
 body.app .table-data2.table td.id-col {
 	width: 1%;
 	white-space: nowrap;
+}
+
+body.app .table-data2.table th.count,
+body.app .table-data2.table td.count {
+	text-align: center;
+	white-space: nowrap;
+	width: 1%;
+	font-variant-numeric: tabular-nums;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+}
+
+body.app .table-data2.table td.count--zero {
+	color: #c5c9ce;
 }
 body.app .table-data-feature .item.delete {
   border: 1px solid transparent;
@@ -518,6 +552,14 @@ body.app .select-with-action .ts-wrapper--sm + .select-with-action__btn {
   min-height: 30px;
 }
 
+body.app .select-with-action:has(select[multiple]) {
+  align-items: flex-start;
+}
+
+body.app .select-with-action:has(select[multiple]) .select-with-action__btn {
+  align-self: flex-start;
+}
+
 /* ----------------------------------------------------------------------------
    9. Tom Select — match theme form-select (border + caret)
    Bootstrap5 TS theme puts border/caret on .ts-wrapper.form-select;
@@ -587,6 +629,86 @@ body.app .ts-dropdown {
   box-shadow: var(--m-shadow-sm, 0 4px 12px rgba(0, 0, 0, 0.08));
   font-family: var(--m-font, inherit);
   font-size: 13.5px;
+}
+
+body.app .ts-wrapper.multi {
+  align-items: flex-start;
+}
+
+body.app .ts-wrapper.multi .ts-control {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 2.5rem 6px 10px !important;
+}
+
+body.app .ts-wrapper.multi .ts-control > .item {
+  order: 1;
+  display: inline-flex;
+  align-items: center;
+  background: #eef1f6;
+  color: var(--m-text, #1f2937);
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.2;
+  padding: 3px 2px 3px 10px !important;
+  margin: 0 !important;
+}
+
+body.app .ts-wrapper.multi.plugin-remove_button .item .remove {
+  font-size: 18px;
+  line-height: 1;
+  padding: 0 8px;
+  margin-left: 4px;
+  border-left: 1px solid #d5dae3;
+  font-weight: 400;
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+body.app .ts-wrapper.multi.plugin-remove_button .item .remove:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.08);
+  color: #111827;
+}
+
+body.app .ts-wrapper.multi .ts-control > input {
+  order: 3;
+  flex: 1 1 4.5rem;
+  min-width: 4.5rem;
+}
+
+body.app .ts-wrapper.multi.plugin-clear_button .clear-button {
+  display: none;
+  order: 2;
+  position: static;
+  opacity: 1;
+  transform: none;
+  right: auto;
+  top: auto;
+  margin: 0;
+  width: 26px;
+  height: 26px;
+  flex: 0 0 26px;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  line-height: 1;
+  border-radius: 6px;
+  background: #eef1f6;
+  color: #6b7280;
+  cursor: pointer;
+}
+
+body.app .ts-wrapper.multi.plugin-clear_button.has-items .clear-button {
+  display: inline-flex;
+}
+
+body.app .ts-wrapper.multi.plugin-clear_button .clear-button:hover {
+  background: #e5e7eb;
+  color: #111827;
 }
 
 /* ----------------------------------------------------------------------------

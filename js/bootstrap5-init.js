@@ -48,15 +48,29 @@ ready(() => {
 
       const isLg = el.classList.contains('form-select-lg');
       const isSm = el.classList.contains('form-select-sm');
-      new TomSelect(el, {
-        allowEmptyOption: true,
+      const isMultiple = el.multiple;
+      const options = {
         create: false,
         maxOptions: null,
         onInitialize() {
           if (isLg) this.wrapper.classList.add('ts-wrapper--lg');
           if (isSm) this.wrapper.classList.add('ts-wrapper--sm');
         },
-      });
+      };
+
+      if (isMultiple) {
+        options.plugins = {
+          remove_button: { title: 'Eltávolítás' },
+          clear_button: { title: 'Összes eltávolítása' },
+        };
+        options.hideSelected = true;
+        options.closeAfterSelect = false;
+        options.placeholder = el.getAttribute('placeholder') || 'Válassz…';
+      } else {
+        options.allowEmptyOption = true;
+      }
+
+      new TomSelect(el, options);
     });
   }
 

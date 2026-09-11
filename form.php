@@ -29,9 +29,29 @@
     $numMax = $numMax ?? 1000;
     $numStep = $numStep ?? ($numInteger ? 1 : 0.1);
     $numValue = $numValue ?? '';
+
+    /**
+     * Multiselect (Tom Select) — példa opciók és kiválasztott értékek.
+     * A POST tömb: name="tags[]"
+     */
+    $tagOptions = [
+        'admin' => 'Administration',
+        'sales' => 'Sales',
+        'marketing' => 'Marketing',
+        'support' => 'Support',
+        'hardware' => 'Hardware',
+        'accessories' => 'Kiegészítők',
+        'warranty' => 'Garancia',
+        'featured' => 'Kiemelt',
+        'new' => 'Új',
+        'promo' => 'Akciós',
+    ];
+    $tagSelected = ['sales', 'hardware', 'featured'];
+    $tagOptions = $tagOptions ?? [];
+    $tagSelected = $tagSelected ?? [];
 ?>
                         <div class="row row-tight" style="margin-top: 16px;">
-                            <div class="col-md-10">
+                            <div class="col-12 col-xxl-11">
 
                                 <form action="#" method="post" onsubmit="return false" enctype="multipart/form-data" class="form-horizontal">
                                 <div class="card shadow" aria-labelledby="basic-form-title">
@@ -68,6 +88,29 @@
                                                 <div class="tab-pane fade show active" id="tab-basic" role="tabpanel" aria-labelledby="tab-basic-btn" tabindex="0">
 
                                                     <div class="row mb-3">
+                                                        <div class="col-12 col-md-2 text-start text-md-end">
+                                                            <label for="tags" class="form-control-label fw-bold">Címkék:</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                            <div class="select-with-action">
+                                                                <select name="tags[]" id="tags" class="form-select" data-tom-select multiple placeholder="Válassz címkéket…">
+                                                                    <?php foreach ($tagOptions as $tagValue => $tagLabel) : ?>
+                                                                    <option value="<?= htmlspecialchars((string) $tagValue, ENT_QUOTES, 'UTF-8') ?>"<?= in_array((string) $tagValue, $tagSelected, true) ? ' selected' : '' ?>><?= htmlspecialchars((string) $tagLabel, ENT_QUOTES, 'UTF-8') ?></option>
+                                                                    <?php endforeach; ?>
+                                                                </select>
+                                                                <button type="button" class="btn btn-outline-secondary select-with-action__btn" aria-label="További lehetőségek" title="További lehetőségek">
+                                                                    <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="tab-pane fade" id="tab-details" role="tabpanel" aria-labelledby="tab-details-btn" tabindex="0">
+
+
+                                                <div class="row mb-3">
                                                         <div class="col-12 col-md-2 text-start text-md-end">
                                                             <label for="datetime-input" class="form-control-label fw-bold">Dátumidő:</label>
                                                         </div>
@@ -109,10 +152,6 @@
                                                             >
                                                         </div>
                                                     </div>
-
-                                                </div>
-
-                                                <div class="tab-pane fade" id="tab-details" role="tabpanel" aria-labelledby="tab-details-btn" tabindex="0">
 
                                                     <div class="row mb-3">
                                                         <div class="col-12 col-md-2 text-start text-md-end">
@@ -276,10 +315,10 @@
                                         <div class="card-footer border-top">
                                             <div class="offset-md-2">
                                                 <button type="submit" class="btn btn-success">
-                                                    <i class="fa-regular fa-dot-circle"></i> Save
+                                                    <i class="fa-solid fa-floppy-disk" aria-hidden="true"></i> Save
                                                 </button>
                                                 <button type="reset" class="btn btn-secondary">
-                                                    <i class="fa-solid fa-ban"></i> Cancel
+                                                    <i class="fa-solid fa-xmark" aria-hidden="true"></i> Cancel
                                                 </button>
                                             </div>
                                         </div>

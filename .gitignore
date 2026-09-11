@@ -4,4 +4,6 @@ screenshots/.DS_Store
 RELEASE.md
 node_modules/
 .vite/
-dist/
+# Only the project-root Vite/build output — never vendor library dist folders
+/dist/
+!vendor/**/dist/
