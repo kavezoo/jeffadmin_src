@@ -60,6 +60,8 @@ ready(() => {
     });
   }
 
+  // Flatpickr init: js/form-datetime-config.js + js/form-datetime.js
+
   // HugeRTE — WYSIWYG on Megjegyzés tab (init on first show so size is correct)
   const hugerteBaseUrl = (() => {
     const script = document.querySelector('script[src*="hugerte"]');
@@ -83,6 +85,19 @@ ready(() => {
     editor.dispatch('ResizeEditor');
   };
 
+  const focusMegjegyzesEditor = () => {
+    const editor = typeof hugerte !== 'undefined' ? hugerte.get('megjegyzes') : null;
+    if (!editor) return;
+    // Defer so Bootstrap tab transition / editor layout finishes first
+    requestAnimationFrame(() => {
+      try {
+        editor.focus();
+      } catch (_e) {
+        /* ignore */
+      }
+    });
+  };
+
   const initMegjegyzesEditor = () => {
     if (typeof hugerte === 'undefined') {
       console.error('HugeRTE not loaded');
@@ -90,6 +105,7 @@ ready(() => {
     }
     if (hugerte.get('megjegyzes')) {
       resizeMegjegyzesEditor();
+      focusMegjegyzesEditor();
       return;
     }
     hugerte.init({
@@ -106,7 +122,10 @@ ready(() => {
       toolbar: 'undo redo | styles | bold italic underline | alignleft aligncenter alignright | bullist numlist | link table | code',
       content_style: 'body { font-family: Inter, system-ui, sans-serif; font-size: 14px; }',
       setup(editor) {
-        editor.on('init', resizeMegjegyzesEditor);
+        editor.on('init', () => {
+          resizeMegjegyzesEditor();
+          focusMegjegyzesEditor();
+        });
       },
     });
   };

@@ -1,3 +1,19 @@
+<?php
+/**
+ * Flatpickr induló értékek — submit formátum (locale-független):
+ *   date:     Y-m-d            pl. 2026-03-15
+ *   time:     H:i              pl. 14:30
+ *   datetime: Y-m-d H:i:S      pl. 2026-03-15 14:30:00
+ * Üres string = üres mező. A megjelenítés (pl. 2026.03.15.) a JS végzi.
+ */
+$fpDate = '2026-03-15';
+$fpTime = '14:30';
+$fpDatetime = '2026-03-15 14:30:00';
+
+$fpDate = $fpDate ?? '';
+$fpTime = $fpTime ?? '';
+$fpDatetime = $fpDatetime ?? '';
+?>
                         <div class="row row-tight" style="margin-top: 16px;">
                             <div class="col-md-10">
 
@@ -34,6 +50,66 @@
                                             <div class="tab-content">
 
                                                 <div class="tab-pane fade show active" id="tab-basic" role="tabpanel" aria-labelledby="tab-basic-btn" tabindex="0">
+
+                                                    <div class="row mb-3">
+                                                        <div class="col-12 col-md-2 text-start text-md-end">
+                                                            <label for="datetime-input" class="form-control-label fw-bold">Dátumidő:</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                            <input type="text" id="datetime-input" name="datetime_input" class="form-control fp-field fp-field--datetime" placeholder="ÉÉÉÉ.HH.NN. ÓÓ:PP" autocomplete="off" data-fp="datetime" value="<?= htmlspecialchars($fpDatetime, ENT_QUOTES, 'UTF-8') ?>" autofocus>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="row mb-3">
+                                                        <div class="col-12 col-md-2 text-start text-md-end">
+                                                            <label for="date-input" class="form-control-label fw-bold">Dátum:</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                            <input type="text" id="date-input" name="date_input" class="form-control fp-field fp-field--date" placeholder="ÉÉÉÉ.HH.NN." autocomplete="off" data-fp="date" value="<?= htmlspecialchars($fpDate, ENT_QUOTES, 'UTF-8') ?>">
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="row mb-3">
+                                                        <div class="col-12 col-md-2 text-start text-md-end">
+                                                            <label for="time-input" class="form-control-label fw-bold">Idő:</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                            <input type="text" id="time-input" name="time_input" class="form-control fp-field fp-field--time" placeholder="ÓÓ:PP" autocomplete="off" data-fp="time" value="<?= htmlspecialchars($fpTime, ENT_QUOTES, 'UTF-8') ?>">
+                                                        </div>
+                                                    </div>
+                                                                                                        
+                                                    <div class="row mb-3">
+                                                        <div class="col-12 col-md-2 text-start text-md-end">
+                                                            <label for="integer-input" class="form-control-label fw-bold">Egész szám:</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                            <input type="number" id="integer-input" name="integer_input" class="form-control" inputmode="numeric" step="1" min="0" placeholder="0">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="tab-pane fade" id="tab-details" role="tabpanel" aria-labelledby="tab-details-btn" tabindex="0">
+
+                                                    <div class="row mb-3">
+                                                        <div class="col-12 col-md-2 text-start text-md-end">
+                                                            <label for="file-input" class="form-control-label fw-bold">File Input:</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                            <div class="file-picker">
+                                                                <input type="file" id="file-input" name="file-input" class="file-picker__input">
+                                                                <label for="file-input" class="file-picker__control">
+                                                                    <span class="file-picker__btn">
+                                                                        <i class="fa-regular fa-folder-open" aria-hidden="true"></i>
+                                                                        Browse
+                                                                    </span>
+                                                                    <span class="file-picker__name" data-file-name>No file chosen</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
 
                                                     <div class="row mb-3">
                                                         <div class="col-12 col-md-2 text-start text-md-end">
@@ -87,26 +163,7 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="row mb-3">
-                                                        <div class="col-12 col-md-2 text-start text-md-end">
-                                                            <label for="file-input" class="form-control-label fw-bold">File Input:</label>
-                                                        </div>
-                                                        <div class="col-12 col-md-9">
-                                                            <div class="file-picker">
-                                                                <input type="file" id="file-input" name="file-input" class="file-picker__input">
-                                                                <label for="file-input" class="file-picker__control">
-                                                                    <span class="file-picker__btn">
-                                                                        <i class="fa-regular fa-folder-open" aria-hidden="true"></i>
-                                                                        Browse
-                                                                    </span>
-                                                                    <span class="file-picker__name" data-file-name>No file chosen</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
 
-                                                <div class="tab-pane fade" id="tab-details" role="tabpanel" aria-labelledby="tab-details-btn" tabindex="0">
                                                     <div class="row mb-3">
                                                         <div class="col-12 col-md-2 text-start text-md-end">
                                                             <label for="selectLg" class="form-control-label fw-bold">Select Large:</label>

@@ -413,6 +413,76 @@ body.app .ts-dropdown {
 	font-size: 13.5px;
 }
 
+/* Flatpickr fields — narrower than full-width form-control */
+body.app input.form-control.fp-field {
+	display: inline-block;
+	max-width: 100%;
+	vertical-align: middle;
+	box-sizing: border-box;
+}
+
+body.app input.form-control.fp-field--time {
+	width: 6.5rem;
+	max-width: 6.5rem;
+}
+
+body.app input.form-control.fp-field--date {
+	width: 10rem;
+	max-width: 10rem;
+}
+
+body.app input.form-control.fp-field--datetime {
+	width: 15rem;
+	max-width: 15rem;
+}
+
+@media (max-width: 575.98px) {
+	body.app input.form-control.fp-field--time {
+		width: 6.25rem;
+		max-width: 100%;
+	}
+
+	body.app input.form-control.fp-field--date {
+		width: 9.5rem;
+		max-width: 100%;
+	}
+
+	body.app input.form-control.fp-field--datetime {
+		width: 14rem;
+		max-width: 100%;
+	}
+}
+
+/* Flatpickr calendar popover — stand out from page */
+body.app .flatpickr-calendar {
+	border: 1px solid rgba(15, 23, 42, 0.12) !important;
+	border-radius: 10px !important;
+	box-shadow:
+		0 2px 6px rgba(15, 23, 42, 0.06),
+		0 12px 28px rgba(15, 23, 42, 0.14) !important;
+	overflow: hidden;
+}
+
+body.app .flatpickr-calendar.arrowTop:before,
+body.app .flatpickr-calendar.arrowTop:after,
+body.app .flatpickr-calendar.arrowBottom:before,
+body.app .flatpickr-calendar.arrowBottom:after {
+	display: none;
+}
+
+body.app .flatpickr-months,
+body.app .flatpickr-weekdays,
+body.app .flatpickr-days {
+	font-family: var(--m-font, inherit);
+}
+
+body.app .flatpickr-day.selected,
+body.app .flatpickr-day.startRange,
+body.app .flatpickr-day.endRange {
+	background: var(--m-accent, #4272d7);
+	border-color: var(--m-accent, #4272d7);
+}
+
 /* HugeRTE — Megjegyzés tab fills the pane */
 body.app .form-card-body:has(#tab-megjegyzes.active) {
 	padding: 0;

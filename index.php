@@ -20,6 +20,7 @@
     <link href="vendor/fontawesome-7.3.1/css/all.min.css" rel="stylesheet" media="all"/>
     <link href="vendor/bootstrap-5.3.8.min.css" rel="stylesheet" media="all"/>
     <link href="vendor/tom-select/css/tom-select.bootstrap5.min.css" rel="stylesheet" media="all"/>
+    <link href="vendor/flatpickr/dist/flatpickr.min.css" rel="stylesheet" media="all"/>
     <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all"/>
     <link href="css/theme.css" rel="stylesheet" media="all"/>
     <link href="css/app.css" rel="stylesheet" media="all"/>
@@ -104,6 +105,10 @@
     <script src="js/vanilla-utils.js"></script>
     <script src="vendor/bootstrap-5.3.8.bundle.min.js"></script>
     <script src="vendor/tom-select/js/tom-select.complete.min.js"></script>
+    <script src="vendor/flatpickr/dist/flatpickr.min.js"></script>
+    <script src="vendor/flatpickr/dist/l10n/hu.js"></script>
+    <script src="js/form-datetime-config.js"></script>
+    <script src="js/form-datetime.js"></script>
     <script src="vendor/hugerte/hugerte.min.js"></script>
     <script src="js/bootstrap5-init.js"></script>
     <script src="js/main-vanilla.js"></script>
