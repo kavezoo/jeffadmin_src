@@ -83,11 +83,11 @@
                                             </div>
 
 
-                                            <div class="row mb-3">
+                                            <div class="row mb-3 align-items-center">
                                                 <div class="col col-md-2 text-start text-md-end">
-                                                    <label class="form-control-label fw-bold">Inline Checkboxes:</label>
+                                                    <label class="form-control-label fw-bold mb-0">Inline Checkboxes:</label>
                                                 </div>
-                                                <div class="col col-md-9">
+                                                <div class="col col-md-9 d-flex align-items-center flex-wrap pt-1">
                                                     <div class="form-check form-check-inline">
                                                         <input type="checkbox" id="inline-checkbox1" name="inline-checkbox1" value="option1" class="form-check-input">
                                                         <label for="inline-checkbox1" class="form-check-label">One</label>
