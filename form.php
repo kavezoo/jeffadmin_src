@@ -2,7 +2,7 @@
                             <div class="col-lg-11">
 
                                 <div class="card shadow">
-                                    <div class="card-header">
+                                    <div class="card-header border-bottom">
                                         <strong>Basic Form</strong> Elements
                                     </div>
 									
@@ -22,7 +22,7 @@
 											
 											
                                             <div class="row mb-3 align-items-start">
-                                                <div class="col col-md-2 text-end">
+                                            <div class="col col-md-2 text-end">
                                                     <label for="textarea-input" class="form-control-label fw-bold">Textarea:</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
@@ -33,8 +33,8 @@
 											
 											
                                             <div class="row mb-3">
-                                                <div class="col col-md-2">
-                                                    <label for="select" class="form-control-label">Select</label>
+                                                <div class="col col-md-2 text-end">
+                                                    <label for="select" class="form-control-label fw-bold">Select:</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
                                                     <select name="select" id="select" class="form-select">
@@ -47,8 +47,8 @@
                                             </div>
 											
                                             <div class="row mb-3">
-                                                <div class="col col-md-2">
-                                                    <label for="selectLg" class="form-control-label">Select Large</label>
+                                                <div class="col col-md-2 text-end">
+                                                    <label for="selectLg" class="form-control-label fw-bold">Select Large:</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
                                                     <select name="selectLg" id="selectLg" class="form-select form-select-lg">
@@ -61,8 +61,8 @@
                                             </div>
 											
                                             <div class="row mb-3">
-                                                <div class="col col-md-2">
-                                                    <label for="selectSm" class="form-control-label">Select Small</label>
+                                                <div class="col col-md-2 text-end">
+                                                    <label for="selectSm" class="form-control-label fw-bold">Select Small:</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
                                                     <select name="selectSm" id="SelectLm" class="form-select form-select-sm">
@@ -78,8 +78,8 @@
 
 
                                             <div class="row mb-3">
-                                                <div class="col col-md-2">
-                                                    <label class="form-control-label">Inline Checkboxes</label>
+                                                <div class="col col-md-2 text-end">
+                                                    <label class="form-control-label fw-bold">Inline Checkboxes:</label>
                                                 </div>
                                                 <div class="col col-md-9">
                                                     <div class="form-check form-check-inline">
@@ -98,7 +98,7 @@
                                             </div>
                                         </form>
                                     </div>
-                                    <div class="card-footer">
+                                    <div class="card-footer border-top">
 										<div class="offset-md-2">
 											<button type="submit" class="btn btn-success">
 												<i class="fa-regular fa-dot-circle"></i> Save

@@ -45,6 +45,12 @@
           <div class="section__content section__content--p30">
             <div class="container-fluid">
 
+						<div class="alert alert-primary alert-dismissible fade show shadow" role="alert">
+							<i class="fa-solid fa-circle-info" style="margin-right:8px;"></i>
+							<strong>Heads up</strong> — this is an informational alert with default Bootstrap styling.
+							<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+						</div>
+
                 <?php 
 					if(isset($_GET["m"]) && $_GET["m"] == "form"){
 						include_once("form.php");
