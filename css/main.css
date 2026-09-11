@@ -27,8 +27,25 @@ body.app .cover-card__footer {
   padding-top: 10px;
 }
 
-.table-group-divider {
-  border-top: 2px solid lightgray;
+/* Table cell borders: thin light gray (incl. vertical); tbody top/bottom: 2px black */
+body.app .table-data2.table > :not(caption) > * > * {
+	border: 1px solid #e0e0e0;
+}
+
+body.app .table-data2.table thead th {
+	border-top: 0;
+}
+
+body.app .table-data2.table tbody.table-group-divider {
+	border-top: 2px solid #b0b0b0;
+}
+
+body.app .table-data2.table tbody tr:first-child > * {
+	border-top: 2px solid #b0b0b0;
+}
+
+body.app .table-data2.table tbody tr:last-child > * {
+	border-bottom: 2px solid #b0b0b0;
 }
 
 body.app .header-wrap {
