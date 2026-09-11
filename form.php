@@ -17,6 +17,9 @@
                                                 <li class="nav-item" role="presentation">
                                                     <a class="nav-link" id="tab-details-btn" data-bs-toggle="tab" href="#tab-details" role="tab" aria-controls="tab-details" aria-selected="false">Részletek</a>
                                                 </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <a class="nav-link" id="tab-megjegyzes-btn" data-bs-toggle="tab" href="#tab-megjegyzes" role="tab" aria-controls="tab-megjegyzes" aria-selected="false">Megjegyzés</a>
+                                                </li>
                                                 <li class="nav-item ms-auto" role="presentation">
                                                     <a class="nav-link" id="tab-settings-btn" data-bs-toggle="tab" href="#tab-settings" role="tab" aria-controls="tab-settings" aria-selected="false">Beállítások</a>
                                                 </li>
@@ -27,7 +30,7 @@
                                             </a>
                                         </div>
 
-                                        <div class="card-body">
+                                        <div class="card-body form-card-body">
                                             <div class="tab-content">
 
                                                 <div class="tab-pane fade show active" id="tab-basic" role="tabpanel" aria-labelledby="tab-basic-btn" tabindex="0">
@@ -43,6 +46,18 @@
                                                                     <option value="1">Option #1</option>
                                                                     <option value="2">Option #2</option>
                                                                     <option value="3">Option #3</option>
+                                                                    <option value="4">Option #4</option>
+                                                                    <option value="5">Option #5</option>
+                                                                    <option value="6">Option #6</option>
+                                                                    <option value="7">Option #7</option>
+                                                                    <option value="8">Option #8</option>
+                                                                    <option value="9">Option #9</option>
+                                                                    <option value="10">Option #10</option>
+                                                                    <option value="11">Option #11</option>
+                                                                    <option value="12">Option #12</option>
+                                                                    <option value="13">Option #13</option>
+                                                                    <option value="14">Option #14</option>
+                                                                    <option value="15">Option #15</option>
                                                                 </select>
                                                                 <button type="button" class="btn btn-outline-secondary select-with-action__btn" aria-label="További lehetőségek" title="További lehetőségek">
                                                                     <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
@@ -103,6 +118,18 @@
                                                                     <option value="1">Option #1</option>
                                                                     <option value="2">Option #2</option>
                                                                     <option value="3">Option #3</option>
+                                                                    <option value="4">Option #4</option>
+                                                                    <option value="5">Option #5</option>
+                                                                    <option value="6">Option #6</option>
+                                                                    <option value="7">Option #7</option>
+                                                                    <option value="8">Option #8</option>
+                                                                    <option value="9">Option #9</option>
+                                                                    <option value="10">Option #10</option>
+                                                                    <option value="11">Option #11</option>
+                                                                    <option value="12">Option #12</option>
+                                                                    <option value="13">Option #13</option>
+                                                                    <option value="14">Option #14</option>
+                                                                    <option value="15">Option #15</option>
                                                                 </select>
                                                                 <button type="button" class="btn btn-outline-secondary select-with-action__btn" aria-label="További lehetőségek" title="További lehetőségek">
                                                                     <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
@@ -129,6 +156,12 @@
                                                                 <label for="inline-checkbox3" class="form-check-label">Three</label>
                                                             </div>
                                                         </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="tab-pane fade" id="tab-megjegyzes" role="tabpanel" aria-labelledby="tab-megjegyzes-btn" tabindex="0">
+                                                    <div class="form-wysiwyg">
+                                                        <textarea id="megjegyzes" name="megjegyzes" class="form-wysiwyg__editor" aria-label="Megjegyzés"></textarea>
                                                     </div>
                                                 </div>
 

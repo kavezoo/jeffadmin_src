@@ -59,4 +59,65 @@ ready(() => {
       });
     });
   }
+
+  // HugeRTE — WYSIWYG on Megjegyzés tab (init on first show so size is correct)
+  const hugerteBaseUrl = (() => {
+    const script = document.querySelector('script[src*="hugerte"]');
+    if (!script || !script.src) return 'vendor/hugerte';
+    return script.src.replace(/\/[^/]*$/, '');
+  })();
+
+  const megjegyzesHostHeight = () => {
+    const host = document.querySelector('.form-wysiwyg');
+    return host ? Math.max(360, host.clientHeight) : 480;
+  };
+
+  const resizeMegjegyzesEditor = () => {
+    const editor = typeof hugerte !== 'undefined' ? hugerte.get('megjegyzes') : null;
+    if (!editor) return;
+    const height = megjegyzesHostHeight();
+    const container = editor.getContainer();
+    if (container) {
+      container.style.height = `${height}px`;
+    }
+    editor.dispatch('ResizeEditor');
+  };
+
+  const initMegjegyzesEditor = () => {
+    if (typeof hugerte === 'undefined') {
+      console.error('HugeRTE not loaded');
+      return;
+    }
+    if (hugerte.get('megjegyzes')) {
+      resizeMegjegyzesEditor();
+      return;
+    }
+    hugerte.init({
+      selector: '#megjegyzes',
+      base_url: hugerteBaseUrl,
+      suffix: '.min',
+      height: megjegyzesHostHeight(),
+      min_height: 360,
+      resize: false,
+      menubar: false,
+      branding: false,
+      promotion: false,
+      plugins: 'lists link table code',
+      toolbar: 'undo redo | styles | bold italic underline | alignleft aligncenter alignright | bullist numlist | link table | code',
+      content_style: 'body { font-family: Inter, system-ui, sans-serif; font-size: 14px; }',
+      setup(editor) {
+        editor.on('init', resizeMegjegyzesEditor);
+      },
+    });
+  };
+
+  const megjegyzesTab = document.getElementById('tab-megjegyzes-btn');
+  if (megjegyzesTab) {
+    megjegyzesTab.addEventListener('shown.bs.tab', initMegjegyzesEditor);
+    window.addEventListener('resize', () => {
+      if (document.getElementById('tab-megjegyzes')?.classList.contains('active')) {
+        resizeMegjegyzesEditor();
+      }
+    });
+  }
 });

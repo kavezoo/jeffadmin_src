@@ -104,6 +104,7 @@
     <script src="js/vanilla-utils.js"></script>
     <script src="vendor/bootstrap-5.3.8.bundle.min.js"></script>
     <script src="vendor/tom-select/js/tom-select.complete.min.js"></script>
+    <script src="vendor/hugerte/hugerte.min.js"></script>
     <script src="js/bootstrap5-init.js"></script>
     <script src="js/main-vanilla.js"></script>
     <script src="js/modern-plugins.js"></script>

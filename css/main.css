@@ -412,3 +412,39 @@ body.app .ts-dropdown {
 	font-family: var(--m-font, inherit);
 	font-size: 13.5px;
 }
+
+/* HugeRTE — Megjegyzés tab fills the pane */
+body.app .form-card-body:has(#tab-megjegyzes.active) {
+	padding: 0;
+}
+
+body.app #tab-megjegyzes.tab-pane {
+	min-height: calc(100vh - 260px);
+}
+
+body.app .form-wysiwyg {
+	display: flex;
+	flex-direction: column;
+	min-height: calc(100vh - 260px);
+	height: calc(100vh - 260px);
+}
+
+body.app .form-wysiwyg__editor {
+	visibility: hidden;
+}
+
+body.app .form-wysiwyg .tox-hugerte,
+body.app .form-wysiwyg .tox {
+	flex: 1 1 auto;
+	border: 0 !important;
+	border-radius: 0 !important;
+}
+
+body.app .form-wysiwyg .tox-editor-header {
+	border-bottom: 1px solid var(--m-border, #e4e7ec) !important;
+	box-shadow: none !important;
+}
+
+body.app .form-wysiwyg .tox-statusbar {
+	border-top: 1px solid var(--m-border, #e4e7ec) !important;
+}
