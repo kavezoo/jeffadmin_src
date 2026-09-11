@@ -111,9 +111,20 @@
                                                         <label for="file-input" class="form-control-label fw-bold">File Input:</label>
                                                     </div>
                                                     <div class="col-12 col-md-9">
-                                                        <input type="file" id="file-input" name="file-input" class="form-control">
+                                                        <div class="file-picker">
+                                                            <input type="file" id="file-input" name="file-input" class="file-picker__input">
+                                                            <label for="file-input" class="file-picker__control">
+                                                                <span class="file-picker__btn">
+                                                                    <i class="fa-regular fa-folder-open" aria-hidden="true"></i>
+                                                                    Browse
+                                                                </span>
+                                                                <span class="file-picker__name" data-file-name>No file chosen</span>
+                                                            </label>
+                                                        </div>
                                                     </div>
                                                 </div>
+                                                
+
                                             </form>
                                         </div>
                                         

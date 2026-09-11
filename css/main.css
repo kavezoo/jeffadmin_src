@@ -126,3 +126,83 @@ body.app .record-link:hover .record-link__icon {
 	color: #555;
 	opacity: 1;
 }
+
+/* Custom file picker — matches form-control / m-btn look */
+body.app .file-picker {
+	position: relative;
+	width: 100%;
+}
+
+body.app .file-picker__input {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+body.app .file-picker__control {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	width: 100%;
+	min-height: 38px;
+	margin: 0;
+	padding: 4px 4px 4px 4px;
+	background: var(--m-surface, #fff);
+	border: 1px solid var(--m-border, #e4e7ec);
+	border-radius: var(--m-radius, 8px);
+	cursor: pointer;
+	transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+
+body.app .file-picker__control:hover {
+	border-color: #d6dae0;
+}
+
+body.app .file-picker__input:focus + .file-picker__control {
+	border-color: var(--m-accent, #4272d7);
+	box-shadow: 0 0 0 3px rgba(var(--m-accent-rgb, 66, 114, 215), 0.15);
+}
+
+body.app .file-picker__btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	flex-shrink: 0;
+	height: 30px;
+	padding: 0 12px;
+	background: var(--m-surface, #fff);
+	border: 1px solid var(--m-border, #e4e7ec);
+	border-radius: 6px;
+	font-family: var(--m-font, inherit);
+	font-size: 12.5px;
+	font-weight: 500;
+	color: var(--m-text, #1f2937);
+	line-height: 1;
+	transition: background 120ms ease, border-color 120ms ease;
+}
+
+body.app .file-picker__control:hover .file-picker__btn {
+	background: var(--m-surface-2, #f3f4f6);
+}
+
+body.app .file-picker__name {
+	flex: 1;
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-family: var(--m-font, inherit);
+	font-size: 13.5px;
+	font-weight: 400;
+	color: var(--m-text-muted, #6b7280);
+}
+
+body.app .file-picker__name.is-selected {
+	color: var(--m-text, #1f2937);
+}
