@@ -45,13 +45,46 @@
           <div class="section__content section__content--p30">
             <div class="container-fluid">
 
+<?php /*
 						<div class="alert alert-primary alert-dismissible fade show shadow" role="alert">
 							<i class="fa-solid fa-circle-info" style="margin-right:8px;"></i>
 							<strong>Heads up</strong> — this is an informational alert with default Bootstrap styling.
 							<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 						</div>
 
-                <?php 
+
+            <div class="row">
+              <div class="col-md-4 col-sm-12 mb-3">
+                  <section class="m-card notice-card notice-card--warning">
+                      <span class="notice-card__icon"><i class="fa-solid fa-triangle-exclamation"></i></span>
+                      <div class="notice-card__body">
+                          <h3 class="notice-card__title">Storage almost full</h3>
+                          <p class="notice-card__text">You’re using 82% of your 100 GB plan. Consider upgrading or pruning old projects to avoid hitting the cap.</p>
+                          <div class="notice-card__actions">
+                              <button type="button" class="m-btn m-btn--primary" style="height: 28px; padding: 0 10px; font-size: 12px;">Upgrade plan</button>
+                          </div>
+                      </div>
+                  </section>
+              </div>
+
+              <div class="col-md-4 col-sm-12 mb-3">
+                  <section class="m-card notice-card notice-card--warning">
+                      <span class="notice-card__icon"><i class="fa-solid fa-triangle-exclamation"></i></span>
+                      <div class="notice-card__body">
+                          <h3 class="notice-card__title">Storage almost full</h3>
+                          <p class="notice-card__text">You’re using 82% of your 100 GB plan. Consider upgrading or pruning old projects to avoid hitting the cap.</p>
+                          <div class="notice-card__actions">
+                              <button type="button" class="m-btn m-btn--primary" style="height: 28px; padding: 0 10px; font-size: 12px;">Upgrade plan</button>
+                          </div>
+                      </div>
+                  </section>
+              </div>
+            </div>
+*/ ?>
+
+
+
+<?php 
 					if(isset($_GET["m"]) && $_GET["m"] == "form"){
 						include_once("form.php");
 					}else{
@@ -59,7 +92,7 @@
 					}
 				?>
 
-                <?php include_once("footer.php"); ?>
+                <?php //include_once("footer.php"); ?>
 
             </div>
           </div>
