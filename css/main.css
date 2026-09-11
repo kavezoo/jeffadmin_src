@@ -84,6 +84,11 @@ body.app .table-data2.table > :not(caption) > * > * {
 
 body.app .table-data2.table thead th {
   border-top: 0;
+  vertical-align: middle;
+}
+
+body.app .table-data2.table tbody td {
+  vertical-align: middle;
 }
 
 body.app .table-data2.table tbody.table-group-divider {
@@ -100,16 +105,22 @@ body.app .table-data2.table tbody tr:last-child > * {
 
 body.app .table-data2.table thead th .au-checkbox {
   position: relative;
-  top: -3px;
+  top: 0;
 }
 
-/* Sortable column headers — look like plain th text; icon only with .asc / .desc */
+/* Sortable column headers — default = same faint as th; active sort (.asc/.desc) darker */
 body.app .table-data2.table thead th > a {
   color: inherit;
   text-decoration: none;
   font: inherit;
+  font-weight: inherit;
   letter-spacing: inherit;
   text-transform: inherit;
+}
+
+body.app .table-data2.table thead th > a.asc,
+body.app .table-data2.table thead th > a.desc {
+  color: var(--m-text, #1f2937);
 }
 
 body.app .table-data2.table thead th > a.asc::after,
@@ -119,6 +130,7 @@ body.app .table-data2.table thead th > a.desc::after {
   font-size: 10px;
   margin-left: 6px;
   display: inline-block;
+  color: inherit;
 }
 
 body.app .table-data2.table thead th > a.asc::after {
@@ -129,6 +141,122 @@ body.app .table-data2.table thead th > a.desc::after {
   content: "\f0d7"; /* fa-caret-down */
 }
 
+/* Date / time columns — center, snug width (content + small padding) */
+body.app .table-data2.table th.date,
+body.app .table-data2.table td.date,
+body.app .table-data2.table th.time,
+body.app .table-data2.table td.time,
+body.app .table-data2.table th.datetime,
+body.app .table-data2.table td.datetime {
+	text-align: center;
+	white-space: nowrap;
+	width: 1%;
+}
+
+body.app .table-data2.table tbody td.date,
+body.app .table-data2.table tbody td.time,
+body.app .table-data2.table tbody td.datetime {
+	vertical-align: middle;
+}
+
+body.app .table-data2.table th.date,
+body.app .table-data2.table td.date {
+	min-width: 6.75rem;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+}
+
+body.app .table-data2.table th.time,
+body.app .table-data2.table td.time {
+	min-width: 3.75rem;
+	padding-left: 0.4rem;
+	padding-right: 0.4rem;
+}
+
+body.app .table-data2.table th.datetime,
+body.app .table-data2.table td.datetime {
+	min-width: 9.75rem;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+}
+
+/* Number / integer — right aligned */
+body.app .table-data2.table th.number,
+body.app .table-data2.table td.number,
+body.app .table-data2.table th.integer,
+body.app .table-data2.table td.integer {
+	text-align: right;
+	white-space: nowrap;
+	font-variant-numeric: tabular-nums;
+}
+
+/* Boolean / visible — eye icon */
+body.app .table-data2.table th.boolean,
+body.app .table-data2.table td.boolean {
+	text-align: center;
+	width: 1%;
+	white-space: nowrap;
+	padding-left: 0.4rem;
+	padding-right: 0.4rem;
+}
+
+body.app .table-data2.table tbody td.boolean {
+	vertical-align: middle;
+}
+
+body.app .table-data2.table .boolean-icon {
+	font-size: 1rem;
+	line-height: 1;
+}
+
+body.app .table-data2.table .boolean-icon--yes {
+	color: #198754;
+}
+
+body.app .table-data2.table .boolean-icon--no {
+	color: #9aa0a6;
+}
+
+/* Meta datetime (Létrehozva / Módosítva) — egy oszlop, két sor; th = mint a többi címke */
+body.app .table-data2.table th.datetime-meta,
+body.app .table-data2.table td.datetime-meta {
+	text-align: center;
+	white-space: nowrap;
+	width: 1%;
+}
+
+body.app .table-data2.table tbody td.datetime-meta {
+	font-size: 11px;
+	line-height: 1.35;
+	color: #6b7280;
+}
+
+/* Select-all indeterminate (partial selection) */
+body.app .au-checkbox input:indeterminate ~ .au-checkmark {
+	background: var(--m-accent, #4272d7);
+	border-color: var(--m-accent, #4272d7);
+}
+
+body.app .au-checkbox input:indeterminate ~ .au-checkmark::after {
+	content: '';
+	position: absolute;
+	display: block;
+	left: 50%;
+	top: 50%;
+	width: 10px;
+	height: 2px;
+	margin: 0;
+	border: 0;
+	background: #fff;
+	transform: translate(-50%, -50%);
+	border-radius: 1px;
+}
+
+body.app .table-data2.table th.id-col,
+body.app .table-data2.table td.id-col {
+	width: 1%;
+	white-space: nowrap;
+}
 body.app .table-data-feature .item.delete {
   border: 1px solid transparent;
 }
@@ -138,6 +266,10 @@ body.app .table-data-feature .item.delete:hover {
 }
 
 /* Record link — thin stroke icon, faint until hover */
+body.app .record-link {
+  color: #1f2937;
+}
+
 body.app .record-link .record-link__icon {
   display: inline-block;
   width: 0.9em;
@@ -147,6 +279,10 @@ body.app .record-link .record-link__icon {
   color: #888;
   opacity: 0.9;
   transition: color 120ms ease, opacity 120ms ease;
+}
+
+body.app .record-link:hover {
+  color: #111827;
 }
 
 body.app .record-link:hover .record-link__icon {

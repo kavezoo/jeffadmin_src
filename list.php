@@ -1,22 +1,81 @@
-<?php /*
-                        <!-- Page header -->
-                        <div class="page-header">
-                            <div>
-                                <h1>Tables</h1>
-                                <p class="subtitle">Modern data tables with sortable columns, status badges, and inline row actions.</p>
-                            </div>
-                            <div class="page-header__actions">
-                                <button type="button" class="m-btn m-btn--ghost">
-                                    <i class="fa-solid fa-download" aria-hidden="true"></i>
-                                    Export
-                                </button>
-                                <button type="button" class="m-btn m-btn--primary">
-                                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
-                                    Add row
-                                </button>
-                            </div>
-                        </div>
-*/ ?>
+<?php
+/**
+ * Lista — megjelenítési kapcsolók
+ * $showRowId: true = ID oszlop látszik a 2. cellában; false = rejtve (data-id a soron marad)
+ */
+$showRowId = $showRowId ?? false;
+
+$listRows = [
+    [
+        'id' => 1001,
+        'category' => 'Administration',
+        'name' => 'Gipsz Jakab',
+        'email' => 'jakab@example.com',
+        'description' => 'Samsung Galaxy S25 Ultra',
+        'datetime' => '2026.03.15. 14:32',
+        'date' => '2026.03.15.',
+        'time' => '14:32',
+        'integer' => '128',
+        'status' => 'process',
+        'status_label' => 'Processed',
+        'price' => '679,00',
+        'visible' => true,
+        'created' => '2026.01.02. 08:14',
+        'modified' => '2026.03.15. 14:32',
+    ],
+    [
+        'id' => 1002,
+        'category' => 'Sales',
+        'name' => 'John Smith',
+        'email' => 'john.smith@example.com',
+        'description' => 'iPhone 17 128GB Titanium',
+        'datetime' => '2026.02.28. 09:05',
+        'date' => '2026.02.28.',
+        'time' => '09:05',
+        'integer' => '1 024',
+        'status' => 'process',
+        'status_label' => 'Processed',
+        'price' => '999,00',
+        'visible' => true,
+        'created' => '2025.11.18. 16:40',
+        'modified' => '2026.02.28. 09:05',
+    ],
+    [
+        'id' => 1003,
+        'category' => 'Marketing',
+        'name' => 'Sarah Wilson',
+        'email' => 'sarah.wilson@example.com',
+        'description' => 'iPhone 17 Pro Max 1TB',
+        'datetime' => '2026.01.10. 18:47',
+        'date' => '2026.01.10.',
+        'time' => '18:47',
+        'integer' => '64',
+        'status' => 'denied',
+        'status_label' => 'Denied',
+        'price' => '1 199,00',
+        'visible' => false,
+        'created' => '2025.09.01. 10:02',
+        'modified' => '2026.01.10. 18:47',
+    ],
+    [
+        'id' => 1004,
+        'category' => 'Support',
+        'name' => 'Robert Taylor',
+        'email' => 'robert.taylor@example.com',
+        'description' => 'Camera C430W 4K',
+        'datetime' => '2025.12.03. 11:20',
+        'date' => '2025.12.03.',
+        'time' => '11:20',
+        'integer' => '7',
+        'status' => 'process',
+        'status_label' => 'Processed',
+        'price' => '699,00',
+        'visible' => false,
+        'created' => '2025.08.22. 13:55',
+        'modified' => '2025.12.03. 11:20',
+    ],
+];
+?>
 						  <div class="row row-tight" style="margin-top: 16px;">
                             <div class="col-md-12">
                                 <div class="card shadow" aria-labelledby="orders-title">
@@ -29,43 +88,57 @@
                                             <button type="button" class="btn btn-success">
                                             <i class="fa-solid fa-plus" aria-hidden="true"></i> Add item
                                             </button>
-                                            <!--div class="select-wrapper">
-                                                <select class="form-select" aria-label="Export">
-                                                    <option selected>Export</option>
-                                                    <option>CSV</option>
-                                                    <option>Excel</option>
-                                                </select>
-                                            </div-->
                                         </div>
                                     </div>
 
                                     <div class="card-body p-0 pt-2">
                                     <div class="table-responsive">
-                                        <table class="table table-data2 table-border table-hover table-striped table-custom-hover mb-0">
+                                        <table class="table table-data2 table-border table-hover table-striped table-custom-hover mb-0" data-table-select>
                                             <thead>
                                                 <tr>
-                                                    <th style="width:24px;"><label class="au-checkbox"><input type="checkbox" aria-label="Select all"><span class="au-checkmark"></span></label></th>
-                                                    <th><a href="#" class="desc">Category</a></th>
-                                                    <th><a href="#" class="desc">Name</a></th>
-                                                    <th><a href="#" class="desc">Email</a></th>
-                                                    <th><a href="#" class="asc">Description</a></th>
-                                                    <th><a href="#" class="desc">Date</a></th>
-                                                    <th><a href="#" class="asc">Status</a></th>
-                                                    <th><a href="#" class="asc">Price</a></th>
-                                                    <th class="action text-center pe-4" style="width: 1px;">Action</th>
+                                                    <th style="width:24px;"><label class="au-checkbox"><input type="checkbox" data-select-all aria-label="Összes kijelölése"><span class="au-checkmark"></span></label></th>
+                                                    <?php if ($showRowId) : ?>
+                                                    <th class="integer id-col"><a href="#">ID</a></th>
+                                                    <?php endif; ?>
+                                                    <th class="string"><a href="#">Category</a></th>
+                                                    <th class="string"><a href="#" class="asc">Name</a></th>
+                                                    <th class="email"><a href="#">Email</a></th>
+                                                    <th class="string"><a href="#">Description</a></th>
+                                                    <th class="datetime"><a href="#">DateTime</a></th>
+                                                    <th class="date"><a href="#">Date</a></th>
+                                                    <th class="time"><a href="#">Time</a></th>
+                                                    <th class="integer"><a href="#">Integer</a></th>
+                                                    <th class="string"><a href="#">Status</a></th>
+                                                    <th class="number"><a href="#">Price</a></th>
+                                                    <th class="boolean"><a href="#">Látható</a></th>
+                                                    <th class="datetime-meta"><a href="#">Létrehozva</a><br><a href="#" class="asc">Módosítva</a></th>
+                                                    <th class="action text-center pe-3" style="width: 1px;">Action</th>
                                                 </tr>
                                             </thead>
 											<tbody class="table-group-divider">
-                                                <tr>
-                                                    <td class="text-center pe-3"><label class="au-checkbox"><input type="checkbox"><span class="au-checkmark"></span></label></td>
-                                                    <td><a href="#" class="text-decoration-none text-dark fw-bold record-link" data-bs-toggle="tooltip" title="Administration rekord megtekintése">Administration <?= icon('link-chain', 'record-link__icon') ?></a></td>
-                                                    <td>Gipsz Jakab</td>
-                                                    <td>lori@example.com</td>
-                                                    <td>Samsung Galaxy S25 Ultra</td>
-                                                    <td>Jan 15, 14:32</td>
-                                                    <td><span class="status--process">Processed</span></td>
-                                                    <td>$679.00</td>
-                                                    <td class="text-center px-3">
+                                                <?php foreach ($listRows as $row) :
+                                                    $rid = (int) $row['id'];
+                                                    $cat = htmlspecialchars($row['category'], ENT_QUOTES, 'UTF-8');
+                                                    $statusClass = $row['status'] === 'denied' ? 'status--denied' : 'status--process';
+                                                    ?>
+                                                <tr data-id="<?= $rid ?>" id="row-<?= $rid ?>">
+                                                    <td class="text-center pe-3"><label class="au-checkbox"><input type="checkbox" data-select-row value="<?= $rid ?>" aria-label="Sor kijelölése"><span class="au-checkmark"></span></label></td>
+                                                    <?php if ($showRowId) : ?>
+                                                    <td class="integer id-col"><?= $rid ?></td>
+                                                    <?php endif; ?>
+                                                    <td class="string"><a href="#" class="text-decoration-none text-dark fw-bold record-link" data-bs-toggle="tooltip" title="<?= $cat ?> rekord megtekintése"><?= $cat ?> <?= icon('link-chain', 'record-link__icon') ?></a></td>
+                                                    <td class="string"><?= htmlspecialchars($row['name'], ENT_QUOTES, 'UTF-8') ?></td>
+                                                    <td class="email"><a href="mailto:<?= htmlspecialchars($row['email'], ENT_QUOTES, 'UTF-8') ?>" class="text-decoration-none text-dark fw-bold record-link"><?= htmlspecialchars($row['email'], ENT_QUOTES, 'UTF-8') ?> <?= icon('mail', 'record-link__icon') ?></a></td>
+                                                    <td class="string"><?= htmlspecialchars($row['description'], ENT_QUOTES, 'UTF-8') ?></td>
+                                                    <td class="datetime"><?= htmlspecialchars($row['datetime'], ENT_QUOTES, 'UTF-8') ?></td>
+                                                    <td class="date"><?= htmlspecialchars($row['date'], ENT_QUOTES, 'UTF-8') ?></td>
+                                                    <td class="time"><?= htmlspecialchars($row['time'], ENT_QUOTES, 'UTF-8') ?></td>
+                                                    <td class="integer"><?= htmlspecialchars($row['integer'], ENT_QUOTES, 'UTF-8') ?></td>
+                                                    <td class="string"><span class="<?= $statusClass ?>"><?= htmlspecialchars($row['status_label'], ENT_QUOTES, 'UTF-8') ?></span></td>
+                                                    <td class="number"><?= htmlspecialchars($row['price'], ENT_QUOTES, 'UTF-8') ?></td>
+                                                    <td class="boolean"><?php if ($row['visible']) : ?><i class="fa-regular fa-eye boolean-icon boolean-icon--yes" title="Látható" aria-label="Látható"></i><?php else : ?><i class="fa-regular fa-eye-slash boolean-icon boolean-icon--no" title="Nem látható" aria-label="Nem látható"></i><?php endif; ?></td>
+                                                    <td class="datetime-meta"><?= htmlspecialchars($row['created'], ENT_QUOTES, 'UTF-8') ?><br><?= htmlspecialchars($row['modified'], ENT_QUOTES, 'UTF-8') ?></td>
+                                                    <td class="action text-center pe-3">
                                                         <div class="table-data-feature">
                                                             <button class="item" type="button" data-bs-toggle="tooltip" title="View"><i class="fa-regular fa-eye"></i></button>
                                                             <button class="item" type="button" data-bs-toggle="tooltip" title="Edit"><i class="fa-regular fa-pen-to-square"></i></button>
@@ -73,57 +146,7 @@
                                                         </div>
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                <td class="text-center pe-3"><label class="au-checkbox"><input type="checkbox"><span class="au-checkmark"></span></label></td>
-                                                <td><a href="#" class="text-decoration-none text-dark fw-bold record-link" data-bs-toggle="tooltip" title="Administration rekord megtekintése">Administration <?= icon('link-chain', 'record-link__icon') ?></a></td>
-                                                    <td>John Smith</td>
-                                                    <td><a class="block-email" href="#">john@example.com</a></td>
-                                                    <td>iPhone 17 128GB Titanium</td>
-                                                    <td>Jan 15, 14:32</td>
-                                                    <td><span class="status--process">Processed</span></td>
-                                                    <td>$999.00</td>
-                                                    <td class="text-center px-3">
-                                                        <div class="table-data-feature">
-                                                            <button class="item" type="button" data-bs-toggle="tooltip" title="View"><i class="fa-regular fa-eye"></i></button>
-                                                            <button class="item" type="button" data-bs-toggle="tooltip" title="Edit"><i class="fa-regular fa-pen-to-square"></i></button>
-                                                            <button class="item delete" type="button" data-bs-toggle="tooltip" title="Delete"><i class="fa-regular fa-trash-can text-danger"></i></button>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center pe-3"><label class="au-checkbox"><input type="checkbox"><span class="au-checkmark"></span></label></td>
-                                                    <td><a href="#" class="text-decoration-none text-dark fw-bold record-link" data-bs-toggle="tooltip" title="Administration rekord megtekintése">Administration <?= icon('link-chain', 'record-link__icon') ?></a></td>
-                                                    <td>Sarah Wilson</td>
-                                                    <td><a class="block-email" href="#">sarah@example.com</a></td>
-                                                    <td>iPhone 17 Pro Max 1TB</td>
-                                                    <td>Jan 15, 14:32</td>
-                                                    <td><span class="status--denied">Denied</span></td>
-                                                    <td>$1,199.00</td>
-                                                    <td class="text-center px-3">
-                                                        <div class="table-data-feature">
-                                                            <button class="item" type="button" data-bs-toggle="tooltip" title="View"><i class="fa-regular fa-eye"></i></button>
-                                                            <button class="item" type="button" data-bs-toggle="tooltip" title="Edit"><i class="fa-regular fa-pen-to-square"></i></button>
-                                                            <button class="item delete" type="button" data-bs-toggle="tooltip" title="Delete"><i class="fa-regular fa-trash-can text-danger"></i></button>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center pe-3"><label class="au-checkbox"><input type="checkbox"><span class="au-checkmark"></span></label></td>
-                                                    <td><a href="#" class="text-decoration-none text-dark fw-bold record-link" data-bs-toggle="tooltip" title="Administration rekord megtekintése">Administration <?= icon('link-chain', 'record-link__icon') ?></a></td>
-                                                    <td>Robert Taylor</td>
-                                                    <td><a class="block-email" href="#">robert@example.com</a></td>
-                                                    <td>Camera C430W 4k</td>
-                                                    <td>Jan 15, 14:32</td>
-                                                    <td><span class="status--process">Processed</span></td>
-                                                    <td>$699.00</td>
-                                                    <td class="text-center px-3">
-                                                        <div class="table-data-feature">
-                                                            <button class="item" type="button" data-bs-toggle="tooltip" title="View"><i class="fa-regular fa-eye"></i></button>
-                                                            <button class="item" type="button" data-bs-toggle="tooltip" title="Edit"><i class="fa-regular fa-pen-to-square"></i></button>
-                                                            <button class="item delete" type="button" data-bs-toggle="tooltip" title="Delete"><i class="fa-regular fa-trash-can text-danger"></i></button>
-                                                        </div>
-                                                    </td>
-                                                </tr>
+                                                <?php endforeach; ?>
                                             </tbody>
                                         </table>
                                     </div>

@@ -264,7 +264,7 @@
                                                             <label for="pos" class="form-control-label fw-bold">Pos:</label>
                                                         </div>
                                                         <div class="col-12 col-md-9">
-                                                            <input type="number" id="pos" name="pos" value="1000" class="form-control" min="0" step="1">
+                                                            <input type="text" id="pos" name="pos" value="1000" class="form-control" data-number-spinner data-integer="1" autocomplete="off" inputmode="numeric" min="0" step="10" placeholder="0">
                                                         </div>
                                                     </div>
                                                     </section>
